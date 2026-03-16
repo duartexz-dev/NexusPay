@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/home..css">
+
+    <title>MoneyFree</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand">MoneyFree</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <div class="div-ask">
+        <div class="ask">
+
+            <h4 id="resTextN">
+            </h4>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Sua Renda</span>
+                <input type="number" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" id="Renda">
+            </div>
+
+
+            <div class="div-btn">
+                <button type="button" class="btn btn-primary" onclick="confirmar()">confirmar</button>
+            </div>
+
+
+            <p style=" color: rgb(255, 255, 255);" id="result"></p>
+
+        </div>
+
+    </div>
+
+
+    <div class="div-ask">
+        <div class="ask">
+
+            <h4 id="resTextB">
+            </h4>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Nome</span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" id="nomeB">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Valor</span>
+                <input type="number" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" id="valorB">
+            </div>
+
+
+
+            <div class="div-btn">
+                <button type="button" class="btn btn-primary" onclick="criar()">confirmar</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="container mt-5">
+
+        <div class="row justify-content-center">
+
+            <!-- Div Responsiva -->
+            <div class="col-12 col-md-8 col-lg-6">
+
+                <div class="card cards text-white shadow p-3">
+                    <h4 class="text-center mb-1">📋 Meus Boletos :</h4>
+                    <p class="text-center mb-s" style="font-size: 12px; color: grey;">Quando o boleto estiver com um ❌ é
+                        sinal que
+                        não pode <br>
+                        pagar
+                        ele
+                        e
+                        o boleto que tiver um ✅
+                        é porque pode ser pago.</p>
+
+
+                    <ul class="list-group list-group-flush bg-dark" id="lista-boletos">
+
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="../js/Sistema.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
