@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/home..css">
+    <title>MoneyFree-Perfil</title>
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand">MoneyFree</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../html/contas.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../html/perfil.html">Perfil</a>
+                    </li>
+
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1 class="text-center" id="PerfilNome"></h1>
+
+    <div class="container-main">
+        <div class="glass-card text-center p-4"
+            style="max-width: 320px; margin:auto; animation: fadeIn 1s ease forwards;">
+
+            <!-- Carrossel de fotos Bootstrap -->
+            <div id="profileCarousel" class="carousel slide mb-20" data-bs-ride="carousel">
+                <div class="carousel-inner rounded-circle"
+                    style="width:120px; height:120px; margin:auto; overflow:hidden; border: 3px solid var(--highlight);">
+                    <div class="carousel-item active">
+                        <img src="https://img.freepik.com/premium-vector/backwards-baseball-cap-latino-guy-winking-smiling-2d-vector-avatar-illustration-college-student-sparkling-cartoon-character-face-portrait-flirty-guy-flat-color-user-profile-image-isolated-white_151150-19792.jpg"
+                            class="d-block w-100 h-100 profile-img glass-hover" alt="Foto 1" style="object-fit: cover;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.pinimg.com/736x/60/31/25/6031253da1d85e65d4e3d1ba0cff44b4.jpg"
+                            class="d-block w-100 h-100 profile-img glass-hover" alt="Foto 2" style="object-fit: cover;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.YK0IAVx1ki2uQqgrNCxEuQHaHa?w=1000&h=1000&rs=1&pid=ImgDetMain&o=7&rm=3"
+                            class="d-block w-100 h-100 profile-img glass-hover" alt="Foto 3" style="object-fit: cover;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://static.vecteezy.com/system/resources/previews/020/389/525/original/hand-drawing-cartoon-girl-cute-girl-drawing-for-profile-picture-vector.jpg"
+                            class="d-block w-100 h-100 profile-img glass-hover" alt="Foto 3" style="object-fit: cover;">
+                    </div>
+                </div>
+
+                <!-- Controles do carrossel -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#profileCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#profileCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+
+
+            <h2 class="mb-1 glass-hover-text" style="color: white;" id="resNome">.....</h2>
+            <p class="mb-3 glass-hover-text" style="color: white;" id="resIdade">.....</p>
+        </div>
+    </div>
+
+
+
+    <div class="container mt-3 card">
+
+        <div class="row justify-content-center ">
+
+            <!-- Div Responsiva -->
+            <div class="col-12 col-md-8 col-lg-6">
+
+                <div class="card cards text-white shadow p-3">
+                    <h4 class="text-center mb-1">📋 Meus Boletos :</h4>
+                    <p class="text-center mb-s" style="font-size: 12px; color: grey;">Quando o boleto estiver com um ❌ é
+                        sinal que
+                        não pode <br>
+                        pagar
+                        ele
+                        e
+                        o boleto que tiver um ✅
+                        é porque pode ser pago.</p>
+
+
+                    <ul class="list-group list-group-flush bg-dark" id="lista-boletos">
+
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="../js/perfil.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

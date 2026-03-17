@@ -6,18 +6,23 @@ let resTN2 = document.getElementById("resTextN")
 resTN2.innerHTML = `${nameUser} Coloque sua Renda!`
 
 let boletos = [
-    { nome: "FirstBoleto", valor: 1, id: 1 }
+
 ]
 
-let renda = Number(document.getElementById("Renda").value)
+
+
 
 function confirmar() {
-    if (renda <= 0 || !renda) {
-        alert("Preencha todos os dados porfavor!")
-    } else if (renda) {
+    let renda = Number(document.getElementById("Renda").value)
+
+    if (renda) {
 
         alert("dados confirmados!")
-        localStorage.setItem("renda", renda)
+        localStorage.setItem("Renda", renda)
+
+    } else if (renda <= 0 || !renda) {
+
+        alert("Preencha todos os dados porfavor!")
 
     }
 
@@ -28,8 +33,7 @@ function criar() {
     let nomeB = document.getElementById("nomeB").value
     let valorB = Number(document.getElementById("valorB").value)
     let res = document.getElementById("lista-boletos")
-
-    console.log(renda)
+    let Renda = Number(localStorage.getItem("Renda"))
 
     if (nomeB && valorB) {
 
@@ -37,35 +41,35 @@ function criar() {
 
             nome: nomeB,
             valor: valorB,
-            id: boletos.length + 1
+
+
 
         })
+
+
+    } else if (!nomeB || !valorB) {
+
+        alert("Preencha todos os dados!")
+
     }
 
-    if (valorB < renda) {
+    if (valorB < Renda) {
         res.innerHTML += ` <li class="list-group-item"> Nome:${nomeB}, Valor: ${valorB}R$  <strong>✅</strong></li> `
-        renda -= valorB
-        localStorage.setItem("Renda", renda)
+        Renda -= valorB
+        localStorage.setItem("Renda", Renda)
+        localStorage.setItem("contas", JSON.stringify(boletos))
 
-
-
-
-    } if (valorB > renda) {
+    } else if (valorB > Renda) {
 
         res.innerHTML += ` <li class="list-group-item"> Nome: ${nomeB}, Valor: ${valorB}R$  <strong>❌</strong></li> `
+        localStorage.setItem("contas", JSON.stringify(boletos))
+
     }
 
 }
-console.log(boletos)
 
 
-let valores = [
 
-    { nome: "asd", valor: 100 },
-    { nome: "aqhdf", valor: 100 },
-    { nome: "aqwe", valor: 100 }
-
-]
 
 
 
