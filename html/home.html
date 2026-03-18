@@ -131,7 +131,81 @@
 
 
 
+    </div>
 
+    <!-- TITULO -->
+    <div class="container title">
+        <h1 class="fw-bold display-5">
+            Já pensou em organizar sua vida financeira sem gastar nada?
+        </h1>
+    </div>
+
+    <!-- PERGUNTAS -->
+    <div class="div-ask">
+        <div class="ask col-md-6">
+
+            <h4 class="mb-3">Responda algumas perguntas</h4>
+
+            <div class="mb-3">
+                <label>Você já investe?</label>
+
+                <input type="text" class="form-control" id="investe" placeholder="Ex: sim">
+            </div>
+
+            <div class=" mb-3">
+                <label>Qual sua renda?</label>
+                <input type="number" class="form-control" id="rendaReal" placeholder="Ex: 1500">
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+    <!-- OPÇÕES -->
+    <div class="div-ask">
+        <div class="ask col-md-6">
+
+            <h4 class="mb-3">Qual seu objetivo?</h4>
+
+            <button class="btn btn-option" onclick="primeiraOpcao()">Se organizar e gastar o mínimo possível</button>
+            <button class="btn btn-option" onclick="segundaOpcao()">Se organizar e gerar mais renda</button>
+            <button class="btn btn-option" onclick="terceiraOpcao()">Começar a investir</button>
+
+        </div>
+    </div>
+
+
+
+    <div class="container mt-3 card">
+
+        <div class="row justify-content-center ">
+
+            <!-- Div Responsiva -->
+            <div class="col-12 col-md-8 col-lg-6">
+
+                <div class="card cards text-white shadow p-3">
+                    <h4 class="text-center mb-1">📋 Dicas :</h4>
+
+
+
+                    <ul class="list-group list-group-flush bg-dark" id="lista-resultados">
+
+
+
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 
     <script src="../js/Sistema.js"></script>

@@ -34,6 +34,7 @@ body {
 }
 .navbar-custom {
   background: var(--primary);
+  padding: 20px;
 }
 
 .navbar-custom .navbar-brand {
@@ -140,4 +141,33 @@ body {
 }
 .card {
   background: linear-gradient(to right, #100f0b, #00040a);
+}
+
+.title {
+  text-align: center;
+  color: var(--text-primary);
+  margin-top: 60px;
+}
+
+.btn-option {
+  margin: 8px 0;
+  width: 100%;
+  border: 1px solid var(--custom-gray-light);
+  color: var(--text-primary);
+}
+
+.btn-option:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.form-control,
+.form-select {
+  background: var(--custom-gray);
+  border: none;
+  color: white;
+}
+
+.form-control::placeholder {
+  color: var(--text-secondary);
 }
