@@ -63,68 +63,137 @@ let res = document.getElementById("lista-resultados");
 
 
 //biblioteca com IA//
-
-
-// 🔹 OPÇÃO 1
+// 🔹 OPÇÃO 1 - INVESTIMENTOS
 function primeiraOpcao() {
 
     let realRenda = Number(document.getElementById("rendaReal").value);
     let investe = document.getElementById("investe").value;
+    let qtdAinvestir = Number(document.getElementById("investimento").value);
+
+    let sugestao = (realRenda * 0.2).toFixed(2);
 
     if (realRenda >= 2000 && investe === "sim") {
 
         res.innerHTML = `
-        <h3>💸 ${nameUser}, ajuste seus gastos</h3>
+        <div class="ask col-md-8">
 
-        <p>Você já investe e tem uma boa renda, mas pode melhorar seus resultados.</p>
+            <h2>💸 Evolução Financeira</h2>
+            <p class="text-secondary">Você já investe. Agora o foco é crescer de verdade.</p>
 
-        <h5>📚 O que fazer?</h5>
-        <p>Corte gastos desnecessários como assinaturas, delivery e compras impulsivas.</p>
+            <hr>
 
-        <div class="alert alert-warning">
-            💡 Revise seus gastos mensais e elimine o que não usa.
+            <div class="card p-3 mb-3">
+                <h5>📊 Seu cenário</h5>
+                <p>Renda mensal: <b>R$ ${realRenda}</b></p>
+                <p>Valor ideal para investir: <b>R$ ${sugestao}</b></p>
+            </div>
+
+            <div class="card p-3 mb-3">
+                <h5>🏦 Exemplos de investimentos</h5>
+                <ul>
+                    <li>CDB 100% a 120% do CDI</li>
+                    <li>Tesouro Selic (baixo risco)</li>
+                    <li>Fundos imobiliários (renda mensal)</li>
+                    <li>Ações de empresas grandes</li>
+                </ul>
+            </div>
+
+            <div class="card p-3 mb-3">
+                <h5>📈 Estratégia simples</h5>
+                <ul>
+                    <li>Parte segura → renda fixa</li>
+                    <li>Parte crescimento → ações</li>
+                    <li>Parte renda → FIIs</li>
+                </ul>
+            </div>
+
+            <div class="alert alert-success">
+                💡 Quanto mais você investe com consistência, mais rápido o dinheiro cresce.
+            </div>
+
+            <div class="card p-3">
+                <h5>🎯 Objetivo</h5>
+                <p>Criar uma renda passiva no futuro.</p>
+            </div>
+
         </div>
+        `;
 
-        <a href="https://blog.nubank.com.br/como-economizar-dinheiro/" target="_blank">
-            🔗 Ver dicas completas
-        </a>
+    } else if (qtdAinvestir > 0) {
 
-        <br><br>
+        res.innerHTML = `
+        <div class="ask col-md-8">
 
-        <iframe width="100%" height="250"
-        src="https://www.youtube.com/embed/V1R7z0r9R2k">
-        </iframe>
+            <h2>📈 Organização para investir</h2>
+            <p class="text-secondary">Você quer investir, mas precisa estruturar melhor.</p>
+
+            <hr>
+
+            <div class="card p-3 mb-3">
+                <h5>💰 Seu valor disponível</h5>
+                <p>Você pode investir <b>R$ ${qtdAinvestir}</b> por mês.</p>
+            </div>
+
+            <div class="card p-3 mb-3">
+                <h5>📊 Exemplos simples</h5>
+                <ul>
+                    <li>Guardar em conta que rende</li>
+                    <li>CDB básico (seguro)</li>
+                    <li>Aplicar aos poucos todo mês</li>
+                </ul>
+            </div>
+
+            <div class="alert alert-info">
+                💡 O importante não é o valor, é começar.
+            </div>
+
+            <div class="card p-3">
+                <h5>🧠 Missão</h5>
+                <p>Fazer seu primeiro investimento ainda esse mês.</p>
+            </div>
+
+        </div>
         `;
 
     } else {
 
         res.innerHTML = `
-        <h3>⚠️ ${nameUser}, comece pelo controle</h3>
+        <div class="ask col-md-8">
 
-        <p>Antes de qualquer coisa, você precisa organizar sua vida financeira.</p>
+            <h2>📊 Controle financeiro</h2>
+            <p class="text-secondary">Antes de investir, você precisa organizar sua vida.</p>
 
-        <h5>📚 O que fazer?</h5>
-        <p>Anote todos os seus gastos e entenda para onde seu dinheiro está indo.</p>
+            <hr>
 
-        <div class="alert alert-info">
-            💡 Controle financeiro é o primeiro passo para crescer.
+            <div class="card p-3 mb-3">
+                <h5>📌 Exemplo de organização</h5>
+                <ul>
+                    <li>Anotar todos os gastos</li>
+                    <li>Separar o essencial do supérfluo</li>
+                    <li>Evitar compras por impulso</li>
+                </ul>
+            </div>
+
+            <div class="card p-3 mb-3">
+                <h5>💡 Ideias simples</h5>
+                <ul>
+                    <li>Guardar R$5 por dia</li>
+                    <li>Cortar um gasto desnecessário</li>
+                    <li>Criar uma reserva</li>
+                </ul>
+            </div>
+
+            <div class="alert alert-warning">
+                💡 Organização vem antes do investimento.
+            </div>
+
         </div>
-
-        <a href="https://www.serasa.com.br/ensina/como-organizar-as-financas/" target="_blank">
-            🔗 Aprender a se organizar
-        </a>
-
-        <br><br>
-
-        <iframe width="100%" height="250"
-        src="https://www.youtube.com/embed/4Z6yYVd-8lA">
-        </iframe>
         `;
     }
 }
 
 
-// 🔹 OPÇÃO 2
+// 🔹 OPÇÃO 2 - AUMENTAR RENDA
 function segundaOpcao() {
 
     let realRenda = Number(document.getElementById("rendaReal").value);
@@ -132,57 +201,75 @@ function segundaOpcao() {
     if (realRenda < 2000) {
 
         res.innerHTML = `
-        <h3>💰 ${nameUser}, aumente sua renda</h3>
+        <div class="ask col-md-8">
 
-        <p>Sua renda atual pode estar te limitando.</p>
+            <h2>💰 Aumentar renda</h2>
+            <p class="text-secondary">Seu foco agora é ganhar mais dinheiro.</p>
 
-        <h5>📚 O que fazer?</h5>
-        <p>Busque renda extra com internet, vendas ou serviços.</p>
+            <hr>
 
-        <ul>
-            <li>💻 Freelancer</li>
-            <li>📱 Vendas online</li>
-            <li>🎥 Criar conteúdo</li>
-        </ul>
+            <div class="card p-3 mb-3">
+                <h5>📱 Ideias reais</h5>
+                <ul>
+                    <li>Revender produtos (Shopee)</li>
+                    <li>Fazer serviços simples</li>
+                    <li>Editar vídeos ou imagens</li>
+                </ul>
+            </div>
 
-        <div class="alert alert-success">
-            💡 Comece com algo simples hoje mesmo.
+            <div class="card p-3 mb-3">
+                <h5>💡 Exemplos</h5>
+                <ul>
+                    <li>Ganhar R$20 por dia já muda sua renda</li>
+                    <li>Fazer pequenas vendas online</li>
+                </ul>
+            </div>
+
+            <div class="alert alert-success">
+                💡 Pequenas rendas viram grandes resultados.
+            </div>
+
         </div>
-
-        <a href="https://blog.nubank.com.br/como-ganhar-dinheiro-extra/" target="_blank">
-            🔗 Ver ideias
-        </a>
-
-        <br><br>
-
-        <iframe width="100%" height="250"
-        src="https://www.youtube.com/embed/2QZ2pYyR7h0">
-        </iframe>
         `;
 
     } else {
 
         res.innerHTML = `
-        <h3>🚀 ${nameUser}, escale sua renda</h3>
+        <div class="ask col-md-8">
 
-        <p>Você já ganha bem, agora foque em crescer mais.</p>
+            <h2>🚀 Escalar renda</h2>
+            <p class="text-secondary">Você já ganha dinheiro. Agora precisa aumentar.</p>
 
-        <h5>📚 O que fazer?</h5>
-        <p>Crie múltiplas fontes de renda e não dependa só de uma.</p>
+            <hr>
 
-        <div class="alert alert-info">
-            💡 Invista em conhecimento e novas oportunidades.
+            <div class="card p-3 mb-3">
+                <h5>📊 Ideias</h5>
+                <ul>
+                    <li>Criar renda extra online</li>
+                    <li>Freelance (sites, design)</li>
+                    <li>Vendas digitais</li>
+                </ul>
+            </div>
+
+            <div class="card p-3 mb-3">
+                <h5>💡 Estratégia</h5>
+                <ul>
+                    <li>Ter mais de uma renda</li>
+                    <li>Automatizar ganhos</li>
+                </ul>
+            </div>
+
+            <div class="alert alert-info">
+                💡 Nunca dependa de uma renda só.
+            </div>
+
         </div>
-
-        <a href="https://www.infomoney.com.br/guias/renda-extra/" target="_blank">
-            🔗 Aprender mais
-        </a>
         `;
     }
 }
 
 
-// 🔹 OPÇÃO 3
+// 🔹 OPÇÃO 3 - COMEÇAR / EVOLUIR INVESTIMENTOS
 function terceiraOpcao() {
 
     let realRenda = Number(document.getElementById("rendaReal").value);
@@ -191,56 +278,68 @@ function terceiraOpcao() {
     if (investe === "sim") {
 
         res.innerHTML = `
-        <h3>🔥 ${nameUser}, você já investe</h3>
+        <div class="ask col-md-8">
 
-        <p>Agora é hora de evoluir.</p>
+            <h2>🔥 Melhorar investimentos</h2>
 
-        <h5>📚 O que fazer?</h5>
-        <p>Diversifique seus investimentos para crescer mais.</p>
+            <div class="card p-3 mb-3">
+                <h5>📊 Opções</h5>
+                <ul>
+                    <li>Renda fixa</li>
+                    <li>Fundos imobiliários</li>
+                    <li>Ações</li>
+                </ul>
+            </div>
 
-        <div class="alert alert-success">
-            💡 Estude ações e fundos imobiliários.
+            <div class="alert alert-success">
+                💡 Reinvestir aumenta seus ganhos.
+            </div>
+
         </div>
-
-        <a href="https://www.xpi.com.br/educacao-financeira/" target="_blank">
-            🔗 Conteúdo avançado
-        </a>
-
-        <br><br>
-
-        <iframe width="100%" height="250"
-        src="https://www.youtube.com/embed/F2y7gJYkKkQ">
-        </iframe>
         `;
 
     } else if (realRenda >= 2000) {
 
         res.innerHTML = `
-        <h3>📈 ${nameUser}, comece a investir</h3>
+        <div class="ask col-md-8">
 
-        <p>Você já pode dar os primeiros passos.</p>
+            <h2>📈 Começar a investir</h2>
 
-        <h5>📚 O que fazer?</h5>
-        <p>Comece com investimentos simples e seguros.</p>
+            <div class="card p-3 mb-3">
+                <h5>📌 Opções seguras</h5>
+                <ul>
+                    <li>CDB</li>
+                    <li>Tesouro Selic</li>
+                    <li>Conta que rende</li>
+                </ul>
+            </div>
 
-        <div class="alert alert-info">
-            💡 Tesouro Direto e CDB são boas opções.
+            <div class="alert alert-info">
+                💡 Comece simples e evolua depois.
+            </div>
+
         </div>
-
-        <a href="https://www.infomoney.com.br/guias/investimentos-para-iniciantes/" target="_blank">
-            🔗 Aprender
-        </a>
         `;
 
     } else {
 
         res.innerHTML = `
-        <h3>⚠️ ${nameUser}, ainda não é o momento</h3>
+        <div class="ask col-md-8">
 
-        <p>Organize sua renda antes de investir.</p>
+            <h2>⚠️ Preparação</h2>
 
-        <div class="alert alert-warning">
-            💡 Primeiro controle, depois investimento.
+            <div class="card p-3 mb-3">
+                <h5>📌 Antes de investir</h5>
+                <ul>
+                    <li>Organizar dinheiro</li>
+                    <li>Criar reserva</li>
+                </ul>
+            </div>
+
+            <div class="alert alert-warning">
+                💡 Base forte primeiro.
+            </div>
+
         </div>
         `;
     }
