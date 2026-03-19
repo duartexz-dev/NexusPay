@@ -5,7 +5,8 @@ let resTN = document.getElementById("resTextB")
 resTN.innerHTML = `${nameUser} Agora Vamos "Criar" <br> seus boletos , coloque as <br> informações abaixo.`
 
 let resTN2 = document.getElementById("resTextN")
-resTN2.innerHTML = `${nameUser} Coloque sua Renda!`
+resTN2.innerHTML = `Olá ${nameUser}! vamos ver apenas um sistema  <br> de criação de boletos,
+Que você poderá ver no seu perfil, <br> clicando lá em cima e indo na área de perfil.`
 
 let boletos = [
 
@@ -59,134 +60,136 @@ function criar() {
     localStorage.setItem("contas", JSON.stringify(boletos))
 }
 
-let res = document.getElementById("lista-resultados");
-
-
 //biblioteca com IA//
+let res = document.getElementById("lista-resultados");
 // 🔹 OPÇÃO 1 - INVESTIMENTOS
 function primeiraOpcao() {
 
+    let sobraDoSalario = Number(document.getElementById("sobras").value)
     let realRenda = Number(document.getElementById("rendaReal").value);
     let investe = document.getElementById("investe").value;
-    let qtdAinvestir = Number(document.getElementById("investimento").value);
 
-    let sugestao = (realRenda * 0.2).toFixed(2);
-
-    if (realRenda >= 2000 && investe === "sim") {
+    if (realRenda >= 2000 && investe === "sim" && sobraDoSalario >= 300) {
 
         res.innerHTML = `
         <div class="ask col-md-8">
-
-            <h2>💸 Evolução Financeira</h2>
-            <p class="text-secondary">Você já investe. Agora o foco é crescer de verdade.</p>
-
-            <hr>
+            <h2>🚀 Fase de Crescimento Acelerado</h2>
 
             <div class="card p-3 mb-3">
                 <h5>📊 Seu cenário</h5>
-                <p>Renda mensal: <b>R$ ${realRenda}</b></p>
-                <p>Valor ideal para investir: <b>R$ ${sugestao}</b></p>
+                <p>Renda: R$ ${realRenda}</p>
+                <p>Sobra: R$ ${sobraDoSalario}</p>
+                <p>👉 Você já está na frente de 90% das pessoas.</p>
             </div>
 
             <div class="card p-3 mb-3">
-                <h5>🏦 Exemplos de investimentos</h5>
-                <ul>
-                    <li>CDB 100% a 120% do CDI</li>
-                    <li>Tesouro Selic (baixo risco)</li>
-                    <li>Fundos imobiliários (renda mensal)</li>
-                    <li>Ações de empresas grandes</li>
-                </ul>
+                <h5>📘 Aula: Estratégia</h5>
+                <p>Invista todo o valor que sobra + aumente aos poucos.</p>
+                <p>Ex: R$ ${sobraDoSalario}/mês → R$ ${(sobraDoSalario * 12)}</p>
             </div>
 
             <div class="card p-3 mb-3">
-                <h5>📈 Estratégia simples</h5>
-                <ul>
-                    <li>Parte segura → renda fixa</li>
-                    <li>Parte crescimento → ações</li>
-                    <li>Parte renda → FIIs</li>
-                </ul>
-            </div>
-
-            <div class="alert alert-success">
-                💡 Quanto mais você investe com consistência, mais rápido o dinheiro cresce.
+                <h5>🎥 Aula</h5>
+                <video controls width="100%">
+                    <source src="video.mp4">
+                </video>
+                <p>Como acelerar seus investimentos.</p>
             </div>
 
             <div class="card p-3">
-                <h5>🎯 Objetivo</h5>
-                <p>Criar uma renda passiva no futuro.</p>
+                <h5>🎯 Missão</h5>
+                <p>Aumentar seu investimento em +R$100</p>
             </div>
-
         </div>
         `;
+    }
 
-    } else if (qtdAinvestir > 0) {
+    else if (investe === "sim") {
 
         res.innerHTML = `
         <div class="ask col-md-8">
-
-            <h2>📈 Organização para investir</h2>
-            <p class="text-secondary">Você quer investir, mas precisa estruturar melhor.</p>
-
-            <hr>
+            <h2>⚙️ Ajustando sua estratégia</h2>
 
             <div class="card p-3 mb-3">
-                <h5>💰 Seu valor disponível</h5>
-                <p>Você pode investir <b>R$ ${qtdAinvestir}</b> por mês.</p>
+                <p>Você investe, mas sobra pouco: R$ ${sobraDoSalario}</p>
             </div>
 
             <div class="card p-3 mb-3">
-                <h5>📊 Exemplos simples</h5>
-                <ul>
-                    <li>Guardar em conta que rende</li>
-                    <li>CDB básico (seguro)</li>
-                    <li>Aplicar aos poucos todo mês</li>
-                </ul>
+                <h5>📘 Aula</h5>
+                <p>Corte gastos + invista automaticamente.</p>
             </div>
 
-            <div class="alert alert-info">
-                💡 O importante não é o valor, é começar.
+            <div class="card p-3 mb-3">
+                <h5>🎥 Aula</h5>
+                <video controls width="100%">
+                    <source src="video.mp4">
+                </video>
             </div>
 
             <div class="card p-3">
-                <h5>🧠 Missão</h5>
-                <p>Fazer seu primeiro investimento ainda esse mês.</p>
+                <h5>🎯 Missão</h5>
+                <p>Fazer sobrar +R$50</p>
             </div>
-
         </div>
         `;
+    }
 
-    } else {
+    else if (sobraDoSalario > 0) {
 
         res.innerHTML = `
         <div class="ask col-md-8">
-
-            <h2>📊 Controle financeiro</h2>
-            <p class="text-secondary">Antes de investir, você precisa organizar sua vida.</p>
-
-            <hr>
+            <h2>💰 Dinheiro parado</h2>
 
             <div class="card p-3 mb-3">
-                <h5>📌 Exemplo de organização</h5>
-                <ul>
-                    <li>Anotar todos os gastos</li>
-                    <li>Separar o essencial do supérfluo</li>
-                    <li>Evitar compras por impulso</li>
-                </ul>
+                <p>Sobra: R$ ${sobraDoSalario}</p>
             </div>
 
             <div class="card p-3 mb-3">
-                <h5>💡 Ideias simples</h5>
-                <ul>
-                    <li>Guardar R$5 por dia</li>
-                    <li>Cortar um gasto desnecessário</li>
-                    <li>Criar uma reserva</li>
-                </ul>
+                <h5>📊 Simulação</h5>
+                <p>1 ano: R$ ${(sobraDoSalario * 12)}</p>
             </div>
 
-            <div class="alert alert-warning">
-                💡 Organização vem antes do investimento.
+            <div class="card p-3 mb-3">
+                <h5>🎥 Aula</h5>
+                <video controls width="100%">
+                    <source src="video.mp4">
+                </video>
             </div>
 
+            <div class="card p-3">
+                <h5>🎯 Missão</h5>
+                <p>Fazer primeiro investimento</p>
+            </div>
+        </div>
+        `;
+    }
+
+    else {
+
+        res.innerHTML = `
+        <div class="ask col-md-8">
+            <h2>⚠️ Sem controle financeiro</h2>
+
+            <div class="card p-3 mb-3">
+                <p>Não sobra dinheiro no mês.</p>
+            </div>
+
+            <div class="card p-3 mb-3">
+                <h5>📘 Aula</h5>
+                <p>Organização antes de investir.</p>
+            </div>
+
+            <div class="card p-3 mb-3">
+                <h5>🎥 Aula</h5>
+                <video controls width="100%">
+                    <source src="video.mp4">
+                </video>
+            </div>
+
+            <div class="card p-3">
+                <h5>🎯 Missão</h5>
+                <p>Fazer sobrar R$20</p>
+            </div>
         </div>
         `;
     }
@@ -197,149 +200,170 @@ function primeiraOpcao() {
 function segundaOpcao() {
 
     let realRenda = Number(document.getElementById("rendaReal").value);
+    let sobraDoSalario = Number(document.getElementById("sobras").value)
 
-    if (realRenda < 2000) {
+    if (realRenda < 2000 && sobraDoSalario <= 0) {
 
         res.innerHTML = `
         <div class="ask col-md-8">
-
-            <h2>💰 Aumentar renda</h2>
-            <p class="text-secondary">Seu foco agora é ganhar mais dinheiro.</p>
-
-            <hr>
+            <h2>🔥 Renda Extra URGENTE</h2>
 
             <div class="card p-3 mb-3">
-                <h5>📱 Ideias reais</h5>
+                <p>Você precisa aumentar renda imediatamente.</p>
+            </div>
+
+            <div class="card p-3 mb-3">
+                <h5>📱 Ideias</h5>
                 <ul>
-                    <li>Revender produtos (Shopee)</li>
-                    <li>Fazer serviços simples</li>
-                    <li>Editar vídeos ou imagens</li>
+                    <li>Revenda</li>
+                    <li>Freelance</li>
+                    <li>Serviços simples</li>
                 </ul>
             </div>
 
             <div class="card p-3 mb-3">
-                <h5>💡 Exemplos</h5>
-                <ul>
-                    <li>Ganhar R$20 por dia já muda sua renda</li>
-                    <li>Fazer pequenas vendas online</li>
-                </ul>
+                <h5>📊 Exemplo</h5>
+                <p>R$20/dia → R$600/mês</p>
             </div>
 
-            <div class="alert alert-success">
-                💡 Pequenas rendas viram grandes resultados.
+            <div class="card p-3 mb-3">
+                <h5>🎥 Aula</h5>
+                <video controls width="100%">
+                    <source src="video.mp4">
+                </video>
             </div>
 
+            <div class="card p-3">
+                <h5>🎯 Missão</h5>
+                <p>Ganhar R$50 essa semana</p>
+            </div>
         </div>
         `;
+    }
 
-    } else {
+    else if (realRenda >= 2000 && sobraDoSalario > 0) {
 
         res.innerHTML = `
         <div class="ask col-md-8">
-
             <h2>🚀 Escalar renda</h2>
-            <p class="text-secondary">Você já ganha dinheiro. Agora precisa aumentar.</p>
-
-            <hr>
 
             <div class="card p-3 mb-3">
-                <h5>📊 Ideias</h5>
-                <ul>
-                    <li>Criar renda extra online</li>
-                    <li>Freelance (sites, design)</li>
-                    <li>Vendas digitais</li>
-                </ul>
+                <p>Você já tem base, agora é crescer.</p>
             </div>
 
             <div class="card p-3 mb-3">
-                <h5>💡 Estratégia</h5>
-                <ul>
-                    <li>Ter mais de uma renda</li>
-                    <li>Automatizar ganhos</li>
-                </ul>
+                <h5>📘 Aula</h5>
+                <p>Crie múltiplas fontes de renda.</p>
             </div>
 
-            <div class="alert alert-info">
-                💡 Nunca dependa de uma renda só.
+            <div class="card p-3 mb-3">
+                <h5>🎥 Aula</h5>
+                <video controls width="100%">
+                    <source src="video.mp4">
+                </video>
             </div>
 
+            <div class="card p-3">
+                <h5>🎯 Missão</h5>
+                <p>Criar nova renda</p>
+            </div>
+        </div>
+        `;
+    }
+
+    else {
+
+        res.innerHTML = `
+        <div class="ask col-md-8">
+            <h2>💡 Melhorar renda</h2>
+
+            <div class="card p-3 mb-3">
+                <p>Sempre busque aumentar ganhos.</p>
+            </div>
+
+            <div class="card p-3 mb-3">
+                <h5>🎥 Aula</h5>
+                <video controls width="100%">
+                    <source src="video.mp4">
+                </video>
+            </div>
         </div>
         `;
     }
 }
 
 
-// 🔹 OPÇÃO 3 - COMEÇAR / EVOLUIR INVESTIMENTOS
+// 🔹 OPÇÃO 3 - EVOLUIR INVESTIMENTOS
 function terceiraOpcao() {
 
     let realRenda = Number(document.getElementById("rendaReal").value);
     let investe = document.getElementById("investe").value;
+    let sobraDoSalario = Number(document.getElementById("sobras").value)
 
-    if (investe === "sim") {
+    if (investe === "sim" && sobraDoSalario > 0) {
 
         res.innerHTML = `
         <div class="ask col-md-8">
-
-            <h2>🔥 Melhorar investimentos</h2>
+            <h2>📈 Evolução dos investimentos</h2>
 
             <div class="card p-3 mb-3">
-                <h5>📊 Opções</h5>
-                <ul>
-                    <li>Renda fixa</li>
-                    <li>Fundos imobiliários</li>
-                    <li>Ações</li>
-                </ul>
+                <p>Você já investe e sobra dinheiro.</p>
             </div>
-
-            <div class="alert alert-success">
-                💡 Reinvestir aumenta seus ganhos.
-            </div>
-
-        </div>
-        `;
-
-    } else if (realRenda >= 2000) {
-
-        res.innerHTML = `
-        <div class="ask col-md-8">
-
-            <h2>📈 Começar a investir</h2>
 
             <div class="card p-3 mb-3">
-                <h5>📌 Opções seguras</h5>
-                <ul>
-                    <li>CDB</li>
-                    <li>Tesouro Selic</li>
-                    <li>Conta que rende</li>
-                </ul>
+                <h5>📊 Simulação</h5>
+                <p>R$ ${sobraDoSalario}/mês → R$ ${(sobraDoSalario * 12)}</p>
             </div>
 
-            <div class="alert alert-info">
-                💡 Comece simples e evolua depois.
+            <div class="card p-3 mb-3">
+                <h5>🎥 Aula</h5>
+                <video controls width="100%">
+                    <source src="video.mp4">
+                </video>
             </div>
 
+            <div class="card p-3">
+                <h5>🎯 Missão</h5>
+                <p>Dobrar investimento</p>
+            </div>
         </div>
         `;
+    }
 
-    } else {
+    else if (realRenda >= 2000) {
 
         res.innerHTML = `
         <div class="ask col-md-8">
+            <h2>🚀 Começar a investir</h2>
 
+            <div class="card p-3 mb-3">
+                <p>Você já pode começar.</p>
+            </div>
+
+            <div class="card p-3 mb-3">
+                <h5>🎥 Aula</h5>
+                <video controls width="100%">
+                    <source src="video.mp4">
+                </video>
+            </div>
+        </div>
+        `;
+    }
+
+    else {
+
+        res.innerHTML = `
+        <div class="ask col-md-8">
             <h2>⚠️ Preparação</h2>
 
             <div class="card p-3 mb-3">
-                <h5>📌 Antes de investir</h5>
-                <ul>
-                    <li>Organizar dinheiro</li>
-                    <li>Criar reserva</li>
-                </ul>
+                <p>Organize antes de investir.</p>
             </div>
 
-            <div class="alert alert-warning">
-                💡 Base forte primeiro.
+            <div class="card p-3">
+                <h5>🎯 Missão</h5>
+                <p>Guardar R$100</p>
             </div>
-
         </div>
         `;
     }
