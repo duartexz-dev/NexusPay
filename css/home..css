@@ -89,7 +89,7 @@ body {
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(255, 255, 255, 0.153),
+    rgba(255, 255, 255, 0.877),
     transparent
   );
 
@@ -105,7 +105,7 @@ body {
 /* efeito aproximar */
 .ask:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.954);
 }
 .ask:hover {
   transform: scale(1.05);

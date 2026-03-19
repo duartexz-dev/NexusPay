@@ -90,9 +90,13 @@ function primeiraOpcao() {
 
             <div class="card p-3 mb-3">
                 <h5>🎥 Aula</h5>
-                <video controls width="100%">
-                    <source src="video.mp4">
-                </video>
+           <iframe width="350" height="200" 
+src="https://www.youtube.com/embed/tpOQn-YZ5Ag" 
+title="YouTube video player" 
+frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen>
+</iframe>
                 <p>Como acelerar seus investimentos.</p>
             </div>
 
@@ -121,9 +125,9 @@ function primeiraOpcao() {
 
             <div class="card p-3 mb-3">
                 <h5>🎥 Aula</h5>
-                <video controls width="100%">
-                    <source src="video.mp4">
-                </video>
+          <iframe width="350" height="150" 
+src="https://www.youtube.com/embed/3-5Ujc5dyhE" 
+frameborder="0" allowfullscreen></iframe>
             </div>
 
             <div class="card p-3">
@@ -151,9 +155,9 @@ function primeiraOpcao() {
 
             <div class="card p-3 mb-3">
                 <h5>🎥 Aula</h5>
-                <video controls width="100%">
-                    <source src="video.mp4">
-                </video>
+            <iframe width="350" height="150" 
+src="https://www.youtube.com/embed/18GRtRzOrMM" 
+frameborder="0" allowfullscreen></iframe>
             </div>
 
             <div class="card p-3">
@@ -181,9 +185,9 @@ function primeiraOpcao() {
 
             <div class="card p-3 mb-3">
                 <h5>🎥 Aula</h5>
-                <video controls width="100%">
-                    <source src="video.mp4">
-                </video>
+          <iframe width="350" height="150" 
+src="https://www.youtube.com/embed/tpOQn-YZ5Ag" 
+frameborder="0" allowfullscreen></iframe>
             </div>
 
             <div class="card p-3">
@@ -228,9 +232,9 @@ function segundaOpcao() {
 
             <div class="card p-3 mb-3">
                 <h5>🎥 Aula</h5>
-                <video controls width="100%">
-                    <source src="video.mp4">
-                </video>
+                <iframe width="350" height="150" 
+src="https://www.youtube.com/embed/SJ7-ImU4UYc" 
+frameborder="0" allowfullscreen></iframe>
             </div>
 
             <div class="card p-3">
@@ -258,9 +262,9 @@ function segundaOpcao() {
 
             <div class="card p-3 mb-3">
                 <h5>🎥 Aula</h5>
-                <video controls width="100%">
-                    <source src="video.mp4">
-                </video>
+            <iframe width="350" height="150" 
+src="https://www.youtube.com/embed/tpOQn-YZ5Ag" 
+frameborder="0" allowfullscreen></iframe>
             </div>
 
             <div class="card p-3">
@@ -283,9 +287,9 @@ function segundaOpcao() {
 
             <div class="card p-3 mb-3">
                 <h5>🎥 Aula</h5>
-                <video controls width="100%">
-                    <source src="video.mp4">
-                </video>
+              <iframe width="350" height="150" 
+src="https://www.youtube.com/embed/tpOQn-YZ5Ag" 
+frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
         `;
@@ -317,9 +321,9 @@ function terceiraOpcao() {
 
             <div class="card p-3 mb-3">
                 <h5>🎥 Aula</h5>
-                <video controls width="100%">
-                    <source src="video.mp4">
-                </video>
+       <iframe width="350" height="150" 
+src="https://www.youtube.com/embed/eMDgWLWOX84" 
+frameborder="0" allowfullscreen></iframe>
             </div>
 
             <div class="card p-3">
@@ -342,9 +346,9 @@ function terceiraOpcao() {
 
             <div class="card p-3 mb-3">
                 <h5>🎥 Aula</h5>
-                <video controls width="100%">
-                    <source src="video.mp4">
-                </video>
+             <iframe width="350" height="150" 
+src="https://www.youtube.com/embed/vLiuSHlx8Eo" 
+frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
         `;
@@ -364,6 +368,7 @@ function terceiraOpcao() {
                 <h5>🎯 Missão</h5>
                 <p>Guardar R$100</p>
             </div>
+            
         </div>
         `;
     }
