@@ -1,240 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/home..css">
-
-    <title>MoneyFree</title>
-</head>
+    <title>NexusPay</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/Home.css" </html>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container-fluid">
-            <a class="navbar-brand">MoneyFree</a>
+    <div class="bg-glow"></div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+    <nav class="navbar navbar-expand-lg fixed-top modern-nav">
+        <div class="container">
+            <a class="navbar-brand logo-brand" href="#">
+                <i class='bx bx-hive'></i> NexusPay
+            </a>
+            <button class="navbar-toggler border-0 shadow-none text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navNexus">
+                <i class='bx bx-menu fs-1'></i>
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-
-
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="../html/perfil.html">Perfil</a>
+            <div class="collapse navbar-collapse" id="navNexus">
+                <ul class="navbar-nav ms-auto align-items-center gap-3 mt-3 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Visão Geral</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#investimentos">Mercados</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gastos">Extrato</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-profile" href="#perfil">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Arthur" alt="Avatar">
+                            <span>Arthur</span>
+                        </a>
                     </li>
-
-
-
                 </ul>
             </div>
         </div>
     </nav>
 
+    <main class="container mb-5">
+        <section id="home" class="fade-in mt-4">
+            <div class="row g-4">
 
-
-
-
-    <div class="div-ask">
-        <div class="ask">
-
-            <h4 id="resTextN">
-            </h4>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Sua Renda</span>
-                <input type="number" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default" id="Renda">
-            </div>
-
-
-            <div class="div-btn">
-                <button type="button" class="btn btn-primary" onclick="confirmar()">confirmar</button>
-            </div>
-
-
-            <p style=" color: rgb(255, 255, 255);" id="result"></p>
-
-        </div>
-
-    </div>
-
-
-    <div class="div-ask">
-        <div class="ask">
-
-            <h4 id="resTextB">
-            </h4>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Nome</span>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default" id="nomeB">
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Valor</span>
-                <input type="number" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default" id="valorB">
-            </div>
-
-
-
-            <div class="div-btn">
-                <button type="button" class="btn btn-primary" onclick="criar()">confirmar</button>
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-
-
-    <div class="container mt-3 card">
-
-        <div class="row justify-content-center ">
-
-            <!-- Div Responsiva -->
-            <div class="col-12 col-md-8 col-lg-6">
-
-                <div class="card cards text-white shadow p-3">
-                    <h4 class="text-center mb-1">📋 Meus Boletos :</h4>
-                    <p class="text-center mb-s" style="font-size: 12px; color: grey;">Quando o boleto estiver com um ❌ é
-                        sinal que
-                        não pode <br>
-                        pagar
-                        ele
-                        e
-                        o boleto que tiver um ✅
-                        é porque pode ser pago.</p>
-
-
-                    <ul class="list-group list-group-flush bg-dark" id="lista-boletos">
-
-
-                    </ul>
-
+                <div class="col-lg-8">
+                    <div class="modern-card hero-card h-100">
+                        <div class="d-flex justify-content-between align-items-start mb-4">
+                            <span class="text-label">Saldo livre</span>
+                            <span class="badge-status"><span class="dot-live"></span> Ao vivo</span>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 mb-2">
+                            <h1 style="filter: blur(0px);" id="saldo" class="main-balance">0</h1>
+                            <button id="ocultBtn" class="btn-icon"><i class='bx bx-show'></i></button>
+                        </div>
+                        <div class="simple-chart"></div>
+                    </div>
                 </div>
 
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    </div>
-
-    <!-- TITULO -->
-    <div class="container title">
-        <h1 class="fw-bold display-5">
-            Já pensou em organizar sua vida financeira sem gastar nada?
-        </h1>
-    </div>
-
-    <!-- PERGUNTAS -->
-    <div class="div-ask">
-        <div class="ask col-md-6">
-
-            <h4 class="mb-3">Responda algumas perguntas</h4>
-
-            <div class="mb-3">
-                <label>Você já investe?</label>
-
-                <input type="text" class="form-control" id="investe" placeholder="Ex: sim">
-            </div>
-
-            <div class=" mb-3">
-                <label>Qual sua renda?</label>
-                <input type="number" class="form-control" id="rendaReal" placeholder="Ex: 1500">
-            </div>
-
-
-            <div class=" mb-3">
-                <label>Se fosse investir quanto seria?</label>
-                <input type="number" class="form-control" id="investimento" placeholder="Ex: 500">
-            </div>
-
-
-            <div class=" mb-3">
-                <label>Do seu salário , quanto você gasta com contas no final do mês?</label>
-                <input type="number" class="form-control" id="sobras" placeholder="Ex: 250">
-            </div>
-
-        </div>
-    </div>
-
-
-    <!-- OPÇÕES -->
-    <div class="div-ask">
-        <div class="ask col-md-6">
-
-            <h4 class="mb-3">Qual seu objetivo?</h4>
-
-            <button class="btn btn-option" onclick="primeiraOpcao()">Se organizar e gastar o mínimo possível</button>
-            <button class="btn btn-option" onclick="segundaOpcao()">Se organizar e gerar mais renda</button>
-            <button class="btn btn-option" onclick="terceiraOpcao()">Começar a investir</button>
-
-        </div>
-    </div>
-
-
-
-    <div class="container mt-3 card">
-
-        <div class="row justify-content-center ">
-
-            <!-- Div Responsiva -->
-            <div class="col-12 col-md-8 col-lg-6">
-
-                <div class="card cards text-white shadow p-3">
-                    <h4 class="text-center mb-1">📋 Dicas :</h4>
-
-
-
-                    <ul class="list-group  list-group-flush bg" id="lista-resultados">
-
-
-
-
-                    </ul>
-
+                <div class="col-lg-4">
+                    <div class="modern-card d-flex flex-column justify-content-center h-100">
+                        <span class="text-label mb-3 d-block">Ações Rápidas</span>
+                        <div class="d-grid gap-3">
+                            <button onclick="addSaldo()" class="btn-modern btn-primary">
+                                <i class='bx bx-plus-circle fs-5'></i> Adicionar Saldo
+                            </button>
+                            <button onclick="btnMovi()" class="btn-modern btn-secondary">
+                                <i class='bx bx-transfer-alt fs-5'></i> Transferir
+                            </button>
+                            <button onclick="btnReset()" class="btn-modern btn-secondary btn-reset">
+                                <i class='bx bx-refresh fs-5'></i>
+                                <span>Resetar Saldo/Ativos
+                                </span>
+                            </button>
+                            <button onclick="atAtivos()" class="btn-modern btn-primary">
+                                <i class='bx bx-plus-circle fs-5'></i> Atualizar ativos
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
+
             </div>
+        </section>
 
+        <section id="investimentos" class="mt-5 fade-in">
+            <h5 class="text-label mb-4">Seus Ativos</h5>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="modern-card asset-card text-center">
+                        <div class="asset-icon blue mx-auto"><i class='bx bxs-institution'></i></div>
+                        <span class="text-label mt-3 d-block">Ações Itaú</span>
+                        <h3 id="acoesValor" class="asset-value">0</h3>
+                        <span class="trend positive justify-content-center"><i class='bx bx-trending-up'></i>
+                            +5.4%</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="modern-card asset-card text-center">
+                        <div class="asset-icon green mx-auto"><i class='bx bx-line-chart'></i></div>
+                        <span class="text-label mt-3 d-block">Renda Fixa / CDI</span>
+                        <h3 id="cdiValor" class="asset-value">0</h3>
+                        <span class="trend positive justify-content-center"><i class='bx bx-trending-up'></i>
+                            +1.2%</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="modern-card asset-card text-center">
+                        <div class="asset-icon orange mx-auto"><i class='bx bxl-bitcoin'></i></div>
+                        <span class="text-label mt-3 d-block">Bitcoin</span>
+                        <h3 id="btcValor" class="asset-value">0</h3>
+                        <span class="trend negative justify-content-center"><i class='bx bx-trending-down'></i>
+                            -4.2%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gastos" class="mt-5 fade-in">
+            <h5 class="text-label mb-4">Últimas Transações</h5>
+            <div class="modern-card p-0 overflow-hidden">
+                <div class="table-responsive">
+                    <table class="table modern-table mb-0 text-nowrap">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Descrição</th>
+                                <th>Categoria</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Movis">
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="perfil" class="mt-5 pb-5 fade-in">
+            <h5 class="text-label mb-4">Sua Conta</h5>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="modern-card text-center profile-card">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Arthur" alt="User"
+                            class="profile-avatar mb-3">
+                        <h4 class="text-white mb-1">Arthur Pendragon</h4>
+                        <span class="badge-plan mb-4"><i class='bx bx-crown'></i> Gold Member</span>
+
+                        <div class="progress-section text-start mt-2">
+                            <div class="d-flex justify-content-between mb-2 text-label">
+                                <span>Nível Financeiro: 12</span>
+                                <span class="text-primary">88%</span>
+                            </div>
+                            <div class="modern-progress">
+                                <div class="progress-bar" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div style="display: none;" id="modal-body" class="modern-modal-overlay">
+        <div class="modern-modal">
+            <div class="modal-header border-0 p-0 mb-3">
+                <h5 class="text-white m-0">Adicionar Saldo</h5>
+            </div>
+            <p class="text-muted text-sm">Atualize seu caixa para análises precisas.</p>
+            <div class="modal-body p-0 mt-3">
+                <label class="text-label mb-2">Valor do aporte</label>
+                <div class="modern-input">
+                    <span class="text-muted">R$</span>
+                    <input type="number" id="saldoAdd" placeholder="0.00">
+                </div>
+            </div>
+            <div class="modal-footer border-0 p-0 mt-4 flex-nowrap gap-2">
+                <button class="btn-modern btn-secondary" onclick="cancelSaldo()">Cancelar</button>
+                <button class="btn-modern btn-primary" onclick="confirmSaldo()">Confirmar</button>
+            </div>
         </div>
-
     </div>
 
-    <footer>
-        <nav class="navbar bg-dark">
-            <div class="container-fluid justify-content-center">
-
-                <span class="navbar-text text-white">
-                    © 2026 MoneyFree| Desenvolvido por Arthur Duarte |
-                    GitHub Arthur:
-                    <a class="text-white" href="https://github.com/duartexz-dev" target="_blank">
-                        github.com/duartexz-dev
-                    </a>
-
-                </span>
-
+    <div style="display: none;" id="modal-movimentacao" class="modern-modal-overlay">
+        <div class="modern-modal">
+            <div class="modal-header border-0 p-0 mb-3">
+                <h5 class="text-white m-0">Nova Movimentação</h5>
             </div>
-        </nav>
-    </footer>
-    <script src="../js/Sistema.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+            <p class="text-muted text-sm">Transfira fundos ou registre um pagamento.</p>
+            <div class="modal-body p-0 mt-3">
+                <label class="text-label mb-2">Valor</label>
+                <div class="modern-input mb-3">
+                    <span class="text-muted">R$</span>
+                    <input type="number" id="valor" placeholder="0.00">
+                </div>
+                <label class="text-label mb-2">Destino / Descrição</label>
+                <div class="modern-input">
+                    <i class='bx bx-user text-muted'></i>
+                    <input type="text" id="ondeElevai" placeholder="Ex: Bitcoin, Nubank...">
+                </div>
+            </div>
+            <div class="modal-footer border-0 p-0 mt-4 flex-nowrap gap-2">
+                <button class="btn-modern btn-secondary" onclick="cancel()">Cancelar</button>
+                <button class="btn-modern btn-primary" onclick="trasferir()">Transferir</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="stars">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+    </div>
+
+    <script src="../js/Home.js"></script>
+    <script src="../js/rendaFixa.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
 </body>
 
 </html>

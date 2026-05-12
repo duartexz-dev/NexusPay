@@ -4,75 +4,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - NEBULA Financial</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login - NexusPay </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
+    <!-- Background -->
     <div class="space-background"></div>
 
+    <!-- Cometas (efeito leve) -->
+    <div class="comets-container">
+        <div class="comet"></div>
+        <div class="comet"></div>
+        <div class="comet"></div>
+    </div>
+
+    <!-- Container principal -->
     <div class="login-page-container">
 
+        <!-- Logo -->
         <div class="nebula-logo-container">
 
             <h1 class="logo-text">NexusPay</h1>
         </div>
 
+        <!-- Painel -->
         <main class="login-panel">
+
+            <!-- Header -->
             <header class="login-header">
                 <h2>BEM-VINDO AO SEU UNIVERSO FINANCEIRO</h2>
-                <p>Faça login para gerenciar seu patrimônio e futuro.</p>
+                <p>crie sua conta para gerenciar seu patrimônio.</p>
             </header>
 
+            <!-- Formulário -->
             <div class="login-form">
+
+                <!-- Email -->
                 <div class="input-group">
                     <label for="email"><i class="fas fa-envelope"></i></label>
                     <input type="email" id="email" name="email" placeholder="Email" required>
                 </div>
 
+                <!-- Senha -->
                 <div class="input-group">
                     <label for="password"><i class="fas fa-lock"></i></label>
                     <input type="password" id="senha" name="password" placeholder="Senha" required>
-                    <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                    <button type="button" class="toggle-password">
+                        <i class="fas fa-eye"></i>
+                    </button>
                 </div>
 
-                <div class="form-options">
-                    <a href="#" class="forgot-password-link">Esqueceu a senha?</a>
-                </div>
+                <!-- Botão -->
+                <button type="submit" class="btn-primary btn-login" onclick="confirm()">
+                    Entrar
+                </button>
 
-                <button type="submit" class="btn-primary btn-login" onclick="criar()">Cadastrar</button>
+                <a style="color: white; text-decoration: none; " href="../index.html">Não tem conta?</a>
 
-                <a style="color: white; text-decoration: none; " href="./html/login.html">Já tem conta?</a>
+            </div>
 
-                </di>
 
 
         </main>
 
     </div>
-    <div class="space-background"></div>
-
-    <div class="comets-container">
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-    </div>
-
-    <script src="./js/Cadastro.js"></script>
+    <script src="../js/Login.js"></script>
 </body>
 
 </html>

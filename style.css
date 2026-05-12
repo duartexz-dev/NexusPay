@@ -1,0 +1,366 @@
+/* --- Configurações Globais (Consistentes com dashboard) --- */
+:root {
+  --bg-space: #03010a; /* Preto profundo */
+  --panel-bg: rgba(15, 2, 35, 0.4); /* Fundo painel translúcido */
+  --glass-border: rgba(255, 255, 255, 0.06); /* Borda de vidro sutil */
+  --neon-purple: #b026ff; /* Roxo Neon */
+  --neon-purple-glow: rgba(176, 38, 255, 0.4);
+  --text-main: #ffffff;
+  --text-muted: #8a81a3;
+  --font-family: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-space);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* --- Fundo de Espaço Simulado (Reutilizado) --- */
+.space-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 3px),
+    radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
+    radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 3px);
+  background-size:
+    550px 550px,
+    350px 350px,
+    250px 250px;
+  background-position:
+    0 0,
+    40px 60px,
+    130px 270px;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* --- Container Principal --- */
+.login-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+/* --- Logotipo --- */
+.nebula-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--neon-purple);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  box-shadow: 0 0 20px var(--neon-purple-glow);
+}
+
+.logo-text {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* --- Painel de Login (Glassmorphism Avançado) --- */
+.login-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(20px); /* Efeito de Vidro Forte */
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 40px;
+  width: 100%;
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    inset 0 0 15px rgba(255, 255, 255, 0.02);
+}
+
+.login-header h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.login-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* --- Formulário e Inputs (Vidro) --- */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  transition: border-color 0.3s ease;
+}
+
+.input-group:focus-within {
+  border-color: var(--neon-purple);
+  box-shadow: 0 0 10px var(--neon-purple-glow);
+}
+
+.input-group label {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  width: 25px;
+  text-align: center;
+}
+
+.input-group input {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  padding: 15px 10px;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  width: 100%;
+}
+
+.input-group input:focus {
+  outline: none;
+}
+
+.input-group .toggle-password {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+/* --- Opções do Formulário --- */
+.form-options {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.forgot-password-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+.forgot-password-link:hover {
+  color: var(--neon-purple);
+}
+
+/* --- Botão Principal (Neon) --- */
+.btn-primary {
+  background: var(--neon-purple);
+  border: none;
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px var(--neon-purple-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--neon-purple-glow);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* --- Footer e Divisor --- */
+.login-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  background: var(--glass-border);
+}
+
+.divider span {
+  padding: 0 10px;
+}
+
+/* --- Botões Sociais --- */
+.social-login-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-social {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.btn-social:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Link Signup --- */
+.signup-prompt {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.signup-link {
+  color: var(--neon-purple);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+/* --- Efeito de Cometas/Meteoros --- */
+.comets-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.comet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 4px rgba(255, 255, 255, 0.1),
+    0 0 0 8px rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(255, 255, 255, 1);
+  animation: animate-comet 4s linear infinite;
+}
+
+/* A cauda do cometa usando pseudo-elemento */
+.comet::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px; /* Comprimento da cauda */
+  height: 1px;
+  background: linear-gradient(90deg, #fff, transparent);
+}
+
+/* Animação de movimento e inclinação */
+@keyframes animate-comet {
+  0% {
+    transform: rotate(315deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(315deg) translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+/* Variações de posição e atraso para cada cometa */
+.comet:nth-child(1) {
+  top: 0;
+  right: 0;
+  left: initial;
+  animation-delay: 0s;
+  animation-duration: 2s;
+}
+
+.comet:nth-child(2) {
+  top: 0;
+  right: 80px;
+  left: initial;
+  animation-delay: 0.2s;
+  animation-duration: 4s;
+}
+
+.comet:nth-child(3) {
+  top: 80px;
+  right: 0;
+  left: initial;
+  animation-delay: 0.4s;
+  animation-duration: 3s;
+}
+
+.comet:nth-child(4) {
+  top: 0;
+  right: 500px;
+  left: initial;
+  animation-delay: 0.8s;
+  animation-duration: 2.5s;
+}
