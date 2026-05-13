@@ -1,4 +1,4 @@
-function confirm() {
+function confirmLogin() {
 
     const email = JSON.parse(localStorage.getItem("email"))
     const senha = JSON.parse(localStorage.getItem("senha"))
