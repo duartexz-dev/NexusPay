@@ -13,7 +13,7 @@ function confirm() {
 
         alert("Senha e Email constam no nosso sistema!")
 
-        window.open("../html/Home.html")
+        window.open("./html/Home.html")
 
 
     } else {

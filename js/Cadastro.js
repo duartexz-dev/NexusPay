@@ -10,7 +10,7 @@ function criar() {
 
         alert("Parabéns , sua conta está cadastrada no nosso sistema!")
         alert("Vamos,te direcionar para o login principal!")
-        window.open("../html/login.html")
+        window.open("./html/login.html")
 
         localStorage.setItem("email", JSON.stringify(email));
         localStorage.setItem("senha", JSON.stringify(senha));
