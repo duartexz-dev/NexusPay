@@ -1,3 +1,8 @@
+let nameUser = localStorage.getItem("nameUser")
+let nameTxt = document.getElementById("nameUser")
+
+nameTxt.innerHTML = `${nameUser}`
+
 let histText = document.getElementById("Movis")
 let historico = localStorage.getItem("Historico")
 histText.innerHTML = historico
@@ -123,7 +128,6 @@ function cancel() {
 }
 
 
-
 function trasferir() {
     let saldo = document.getElementById("saldo")
     let saldoV = document.getElementById("saldo").innerText
@@ -227,4 +231,38 @@ function atualizarMovis(data, nome, categoria, valor) {
 }
 
 
+const email = JSON.parse(localStorage.getItem("email"))
+let nameEmail = document.getElementById("perfilEmail")
+nameEmail.innerHTML = `${email}`
 
+let patri = Number(btcInicial) + Number(acoesInicial) + Number(cdiInicial)
+let patriText = document.getElementById("patrimonio")
+patriText.innerHTML = patri
+
+
+
+function btnPersonalizar() {
+
+    let modal = document.getElementById("modal-Perfil")
+    modal.style.display = "flex"
+};
+function cancelPersonalizacao() {
+    let modal = document.getElementById("modal-Perfil")
+    modal.style.display = "none"
+}
+
+function Personalizar() {
+
+    let name = document.getElementById("name").value
+    let nameText = document.getElementById("nameUser")
+    nameText.innerHTML = `${name}`
+
+    localStorage.setItem("nameUser", name)
+
+    alert("Nome do perfil atualizado!")
+
+    let modal = document.getElementById("modal-Perfil")
+    modal.style.display = "none"
+
+
+}

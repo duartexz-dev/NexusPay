@@ -90,6 +90,7 @@
                     <div class="modern-card asset-card text-center">
                         <div class="asset-icon blue mx-auto"><i class='bx bxs-institution'></i></div>
                         <span class="text-label mt-3 d-block">Ações Itaú</span>
+                        <span class="text-muted">R$</span>
                         <h3 id="acoesValor" class="asset-value">0</h3>
                         <span class="trend positive justify-content-center"><i class='bx bx-trending-up'></i>
                             +5.4%</span>
@@ -99,6 +100,7 @@
                     <div class="modern-card asset-card text-center">
                         <div class="asset-icon green mx-auto"><i class='bx bx-line-chart'></i></div>
                         <span class="text-label mt-3 d-block">Renda Fixa / CDI</span>
+                        <span class="text-muted">R$</span>
                         <h3 id="cdiValor" class="asset-value">0</h3>
                         <span class="trend positive justify-content-center"><i class='bx bx-trending-up'></i>
                             +1.2%</span>
@@ -108,6 +110,7 @@
                     <div class="modern-card asset-card text-center">
                         <div class="asset-icon orange mx-auto"><i class='bx bxl-bitcoin'></i></div>
                         <span class="text-label mt-3 d-block">Bitcoin</span>
+                        <span class="text-muted">R$</span>
                         <h3 id="btcValor" class="asset-value">0</h3>
                         <span class="trend negative justify-content-center"><i class='bx bx-trending-down'></i>
                             -4.2%</span>
@@ -137,29 +140,129 @@
                 </div>
             </div>
         </section>
-
         <section id="perfil" class="mt-5 pb-5 fade-in">
-            <h5 class="text-label mb-4">Sua Conta</h5>
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="modern-card text-center profile-card">
-                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Arthur" alt="User"
-                            class="profile-avatar mb-3">
-                        <h4 class="text-white mb-1">Arthur Pendragon</h4>
-                        <span class="badge-plan mb-4"><i class='bx bx-crown'></i> Gold Member</span>
 
-                        <div class="progress-section text-start mt-2">
-                            <div class="d-flex justify-content-between mb-2 text-label">
-                                <span>Nível Financeiro: 12</span>
-                                <span class="text-primary">88%</span>
+            <h5 class="text-label mb-4">
+                Sua Conta
+            </h5>
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-7">
+
+                    <div class="modern-card profile-card">
+
+                        <div class="profile-glow"></div>
+
+                        <!-- TOPO -->
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+
+                            <div class="d-flex align-items-center gap-3">
+
+                                <img id="perfilFoto"
+                                    src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
+                                    alt="Perfil" class="profile-avatar">
+
+                                <div>
+
+                                    <h3 id="nameUser" class="text-white fw-bold mb-1">
+
+                                    </h3>
+
+                                    <span id="perfilEmail" class="text-desc small">
+
+                                    </span>
+
+                                </div>
+
                             </div>
-                            <div class="modern-progress">
-                                <div class="progress-bar" style="width: 88%"></div>
-                            </div>
+
+                            <button onclick="btnPersonalizar()" class="btn-icon">
+                                <i class='bx bx-edit-alt'></i>
+                            </button>
+
                         </div>
+
+                        <!-- BADGE -->
+                        <div class="mt-4">
+
+                            <span class="badge-plan">
+                                <i class='bx bx-crown'></i>
+                                Nexus Beta
+                            </span>
+
+                        </div>
+
+                        <!-- INFO -->
+                        <div class="row g-3 mt-2">
+
+                            <div class="col-md-4">
+
+                                <div class="info-mini-card">
+
+                                    <i class='bx bx-wallet'></i>
+                                    <span>
+                                        R$
+                                    </span>
+                                    <span id="saldo">
+                                        0
+                                    </span>
+
+                                    <small>Saldo</small>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="info-mini-card">
+
+                                    <i class='bx bx-line-chart'></i>
+
+                                    <span>
+                                        R$
+                                    </span>
+                                    <span id="patrimonio">
+
+                                    </span>
+
+                                    <small>Patrimônio</small>
+
+                                </div>
+
+                            </div>
+
+
+
+
+                            <!-- FOOTER -->
+                            <div class="profile-footer mt-4">
+
+                                <div class="profile-status">
+
+                                    <span class="online-dot"></span>
+
+                                    Conta protegida e sincronizada
+
+                                </div>
+
+                                <button onclick="btnPersonalizar()" class="btn-modern btn-primary">
+
+                                    <i class='bx bx-user'></i>
+
+                                    Personalizar Perfil
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
                     </div>
+
                 </div>
-            </div>
+
         </section>
     </main>
 
@@ -208,13 +311,32 @@
         </div>
     </div>
 
+    <div style="display: none;" id="modal-Perfil" class="modern-modal-overlay">
+        <div class="modern-modal">
+            <div class="modal-header border-0 p-0 mb-3">
+                <h5 class="text-white m-0">Novo Perfil!</h5>
+            </div>
+            <p class="text-muted text-sm">Editando perfil...</p>
+            <div class="modal-body p-0 mt-3">
+                <label class="text-label mb-2">Seu nome</label>
+                <div class="modern-input">
+                    <i class='bx bx-user text-muted'></i>
+                    <input type="text" id="name" placeholder="Ex:Arthur,Amanda e etc...">
+                </div>
+            </div>
+            <div class="modal-footer border-0 p-0 mt-4 flex-nowrap gap-2">
+                <button class="btn-modern btn-secondary" onclick="cancelPersonalizacao()">Cancelar</button>
+                <button class="btn-modern btn-primary" onclick="Personalizar()">Confirmar</button>
+            </div>
+        </div>
+    </div>
     <div class="stars">
         <span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span>
     </div>
 
     <script src="../js/Home.js"></script>
-    <script src="../js/rendaFixa.js"></script>
+    <script src="../js/rendasAtivosAI.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const observer = new IntersectionObserver(entries => {
