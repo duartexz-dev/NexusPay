@@ -12,7 +12,7 @@ function confirm() {
     } else if (emailC === email && senhaC === senha) {
 
         alert("Senha e Email constam no nosso sistema!")
-        window.location.href = "Home.html"
+        window.location.href = "./Home.html"
 
     } else {
         alert("Informações incorretas.")
