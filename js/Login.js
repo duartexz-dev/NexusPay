@@ -12,7 +12,7 @@ function confirmLogin() {
     } else if (emailC === email && senhaC === senha) {
 
         alert("Senha e Email constam no nosso sistema!")
-        window.location.href = "html/Home.html"
+        window.location.href = "/MoneyFree/html/Home.html"
 
     } else {
         alert("Informações incorretas.")
@@ -21,3 +21,4 @@ function confirmLogin() {
 
 
 }
+
