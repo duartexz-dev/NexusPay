@@ -433,6 +433,26 @@
             </div>
         </div>
     </div>
+
+    <div style="display: none;" id="modal-body" class="modern-modal-overlay">
+        <div class="modern-modal">
+            <div class="modal-header border-0 p-0 mb-3">
+                <h5 class="text-white m-0">Adicionar Saldo</h5>
+            </div>
+            <p class="text-muted text-sm">Atualize seu caixa para análises precisas.</p>
+            <div class="modal-body p-0 mt-3">
+                <label class="text-label mb-2">Valor do aporte</label>
+                <div class="modern-input">
+                    <span class="text-muted">R$</span>
+                    <input type="number" id="saldoAdd" placeholder="0.00">
+                </div>
+            </div>
+            <div class="modal-footer border-0 p-0 mt-4 flex-nowrap gap-2">
+                <button class="btn-modern btn-secondary" onclick="cancelSaldo()">Cancelar</button>
+                <button class="btn-modern btn-primary" onclick="confirmSaldo()">Confirmar</button>
+            </div>
+        </div>
+    </div>
     <div class="stars">
         <span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span>
