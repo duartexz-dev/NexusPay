@@ -33,7 +33,7 @@ function rendaFixa() {
     let cdiValor = Number(cdi.innerText)
 
     // APLICA O RENDIMENTO
-    let rendimento = cdiValor * 0.002
+    let rendimento = cdiValor * 0.001
 
     let novoValor = cdiValor + rendimento
 
@@ -87,7 +87,7 @@ function rendimentoBtc() {
     let btcValor = Number(btc.innerText)
 
     // RENDIMENTO BTC (5%)
-    let rendimento = btcValor * 0.005
+    let rendimento = btcValor * 0.002
 
     let novoValor = btcValor + rendimento
 
@@ -143,7 +143,7 @@ function rendimentoAcoes() {
     let acoesValor = Number(acoes.innerText)
 
     // RENDIMENTO AÇÕES (3%)
-    let rendimento = acoesValor * 0.003
+    let rendimento = acoesValor * 0.005
 
     let novoValor = acoesValor + rendimento
 

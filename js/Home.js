@@ -1,16 +1,19 @@
 let nameUser = localStorage.getItem("nameUser")
 let nameTxt = document.getElementById("nameUser")
-
+let nameTxt2 = document.getElementById("nameUser2")
 nameTxt.innerHTML = `${nameUser}`
+nameTxt2.innerHTML = `${nameUser}`
 
 let histText = document.getElementById("Movis")
 let historico = localStorage.getItem("Historico")
 histText.innerHTML = historico
 
 let saldoText = document.getElementById("saldo")
+let saldoText2 = document.getElementById("saldo2")
 let saldoInicial = localStorage.getItem("saldo")
 
 saldoText.innerText = saldoInicial
+saldoText2.innerText = saldoInicial
 
 let btcText = document.getElementById("btcValor")
 let btcInicial = localStorage.getItem("btnSaldo")
@@ -127,12 +130,18 @@ function cancel() {
     modal.style.display = "none"
 }
 
+function escolher(nome) {
 
+    let input = document.getElementById("ondeElevai")
+
+    input.value = nome
+
+}
 function trasferir() {
     let saldo = document.getElementById("saldo")
     let saldoV = document.getElementById("saldo").innerText
     let valor = Number(document.getElementById("valor").value)
-    let ondeVai = document.getElementById("ondeElevai").value
+    let ondeVai = document.getElementById("ondeElevai").value.toLowerCase()
     let btc = document.getElementById("btcValor")
     let btcValor = document.getElementById("btcValor").innerText
     let modal = document.getElementById("modal-movimentacao")
@@ -151,7 +160,9 @@ function trasferir() {
         alert("Saldo insuficiente")
     } else if (!valor || !ondeVai) {
         alert("Preencha todas as informações.")
-    } else if (ondeVai.includes("bitcoin".toLowerCase())) {
+    } else if (ondeVai.includes("bitcoin") ||
+        ondeVai.includes("ethereum") ||
+        ondeVai.includes("dogcoin")) {
 
         btc.innerText = Number(valor) + Number(btcValor);
 
@@ -166,10 +177,10 @@ function trasferir() {
         localStorage.setItem("btnSaldo", saldoBtc)
 
         alert("transação concluida!")
-        atualizarMovis(dia, "Bitcoin", "Investimento", valor)
+        atualizarMovis(dia, "Criptomoeda", "Investimento", valor)
         modal.style.display = "none"
 
-    } else if (ondeVai.includes("Cdi".toLowerCase()) || ondeVai.includes("Renda Fixa".toLowerCase())) {
+    } else if (ondeVai.includes("cdi") || ondeVai.includes("cdb")) {
 
         cdi.innerText = Number(valor) + Number(cdiValor);
 
@@ -188,7 +199,11 @@ function trasferir() {
         atualizarMovis(dia, "Cdi/Renda Fixa", "Investimento", valor)
 
         modal.style.display = "none"
-    } else if (ondeVai.includes("Renda Variável".toLowerCase()) || ondeVai.includes("Ações".toLowerCase())) {
+    } else if (ondeVai.includes("ações") ||
+        ondeVai.includes("itaú") ||
+        ondeVai.includes("petrobras") ||
+        ondeVai.includes("vale") ||
+        ondeVai.includes("apple")) {
 
         acoes.innerText = Number(valor) + Number(acoesValor);
 
@@ -233,11 +248,17 @@ function atualizarMovis(data, nome, categoria, valor) {
 
 const email = JSON.parse(localStorage.getItem("email"))
 let nameEmail = document.getElementById("perfilEmail")
-nameEmail.innerHTML = `${email}`
 
-let patri = Number(btcInicial) + Number(acoesInicial) + Number(cdiInicial)
+
+if (!email) {
+    nameEmail.innerHTML = `Email do Usuário.`
+} else {
+    nameEmail.innerHTML = `${email}`
+}
+
+
 let patriText = document.getElementById("patrimonio")
-patriText.innerHTML = patri
+patriText.innerHTML = Number(btcInicial) + Number(acoesInicial) + Number(cdiInicial)
 
 
 
@@ -255,14 +276,26 @@ function Personalizar() {
 
     let name = document.getElementById("name").value
     let nameText = document.getElementById("nameUser")
-    nameText.innerHTML = `${name}`
+    let nameText2 = document.getElementById("nameUser2")
+    nameText.innerHTML = "<h1>Usuario</h1>"
+    nameText2.innerHTML = "<h1>Usuario</h1>"
 
-    localStorage.setItem("nameUser", name)
+    if (!name) {
+        alert("Preencha tudo antes de confirmar.")
+    }
+    else {
+        nameText.innerHTML = `${name}`
+        nameText2.innerHTML = `${name}`
+        localStorage.setItem("nameUser", name)
 
-    alert("Nome do perfil atualizado!")
 
-    let modal = document.getElementById("modal-Perfil")
-    modal.style.display = "none"
+        alert("Nome do perfil atualizado!")
+
+        let modal = document.getElementById("modal-Perfil")
+        modal.style.display = "none"
+    }
+
+
 
 
 }
