@@ -231,13 +231,19 @@ function atualizarMovis(data, nome, categoria, valor) {
 
     let historico = document.getElementById("Movis")
 
-    historico.innerHTML += `<tr>
-        <td>${data}</td>
-        <td class="text-white fw-medium">${nome}</td>
-        <td><i class='bx bx-home-alt text-muted me-1'></i>${categoria}</td>
-        <td class="text-white fw-semibold">R$${valor}</td>
-
-    </tr> `
+    historico.innerHTML += `
+    <tr class="transaction-row">
+        <td class="text-secondary small" style="font-size: 0.75rem;">${data}</td>
+        <td class="fw-bold text-primary">${nome}</td>
+        <td>
+            <span class="transaction-badge">
+                <i class='bx bx-purchase-tag-alt me-1'></i>${categoria}
+            </span>
+        </td>
+        <td class="text-end fw-bold text-primary">
+            R$ ${valor}
+        </td>
+    </tr>`
 
     localStorage.setItem("Historico", historico.innerHTML) //O .innerHTML neste caso , converte o Objeto em Texto//
 

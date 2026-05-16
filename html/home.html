@@ -84,6 +84,50 @@
             </div>
         </section>
 
+        <!-- SEÇÃO EXPLICATIVA PREMIUM (NOVA) -->
+        <section class="mt-5 fade-in">
+            <div class="premium-explainer-card">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <span class="text-label mb-2 d-block">Sobre o NexusPay</span>
+                        <h2 class="explainer-title mb-3">Controle total sobre o seu amanhã financeiro.</h2>
+                        <p class="explainer-desc mb-4">
+                            O NexusPay é o seu ecossistema definitivo para gerenciar, investir e acompanhar seu patrimônio. 
+                            Criado para oferecer uma experiência clean e sofisticada, aqui você unifica criptomoedas, ações e renda fixa em uma única visão inteligente.
+                        </p>
+                        <div class="d-flex gap-4 flex-wrap">
+                            <div class="explainer-feature">
+                                <i class='bx bx-check-shield'></i>
+                                <span>Segurança e Privacidade</span>
+                            </div>
+                            <div class="explainer-feature">
+                                <i class='bx bx-trending-up'></i>
+                                <span>Análise em Tempo Real</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="explainer-visual">
+                            <div class="floating-mini-card c1">
+                                <i class='bx bx-pie-chart-alt-2'></i>
+                                <div>
+                                    <small>Patrimônio</small>
+                                    <strong>+12.5%</strong>
+                                </div>
+                            </div>
+                            <div class="floating-mini-card c2">
+                                <i class='bx bx-analyse'></i>
+                                <div>
+                                    <small>Ecossistema</small>
+                                    <strong>Sincronizado</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="investimentos" class="mt-5 fade-in">
             <h5 class="text-label mb-4">Seus Ativos</h5>
             <div class="row g-4">
@@ -314,83 +358,52 @@
                 </div>
 
                 <!-- CRIPTO -->
-                <label class="text-label mb-2">Criptomoedas</label>
+                <!-- CATEGORIAS EM DETAILS -->
+                <div class="modal-categories">
+                    <details class="modal-category-details">
+                        <summary class="modal-category-summary">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class='bx bxl-bitcoin'></i>
+                                <span>Criptomoedas</span>
+                            </div>
+                            <i class='bx bx-chevron-down modal-arrow'></i>
+                        </summary>
+                        <div class="invest-grid p-3">
+                            <button class="invest-card" onclick="escolher('Bitcoin')"><i class='bx bxl-bitcoin'></i> Bitcoin</button>
+                            <button class="invest-card" onclick="escolher('Ethereum')"><i class='bx bx-coin'></i> Ethereum</button>
+                            <button class="invest-card" onclick="escolher('DogCoin')"><i class='bx bx-money'></i> DogCoin</button>
+                        </div>
+                    </details>
 
-                <div class="invest-grid mb-4">
+                    <details class="modal-category-details mt-2">
+                        <summary class="modal-category-summary">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class='bx bx-bank'></i>
+                                <span>Renda Fixa</span>
+                            </div>
+                            <i class='bx bx-chevron-down modal-arrow'></i>
+                        </summary>
+                        <div class="invest-grid p-3">
+                            <button class="invest-card" onclick="escolher('CDI')"><i class='bx bx-bank'></i> CDI</button>
+                            <button class="invest-card" onclick="escolher('CDB')"><i class='bx bx-wallet'></i> CDB</button>
+                        </div>
+                    </details>
 
-                    <button class="invest-card" onclick="escolher('Bitcoin')">
-
-                        <i class='bx bxl-bitcoin'></i>
-                        Bitcoin
-
-                    </button>
-
-                    <button class="invest-card" onclick="escolher('Ethereum')">
-
-                        <i class='bx bx-coin'></i>
-                        Ethereum
-
-                    </button>
-
-                    <button class="invest-card" onclick="escolher('DogCoin')">
-
-                        <i class='bx bx-money'></i>
-                        DogCoin
-
-                    </button>
-
-                </div>
-
-                <!-- RENDA FIXA -->
-                <label class="text-label mb-2">Renda Fixa</label>
-
-                <div class="invest-grid mb-4">
-
-                    <button class="invest-card" onclick="escolher('CDI')">
-
-                        <i class='bx bx-bank'></i>
-                        CDI
-
-                    </button>
-
-                    <button class="invest-card" onclick="escolher('CDB')">
-
-                        <i class='bx bx-wallet'></i>
-                        CDB
-
-                    </button>
-
-                </div>
-
-                <!-- RENDA VARIÁVEL -->
-                <label class="text-label mb-2">Renda Variável</label>
-
-                <div class="invest-grid">
-
-                    <button class="invest-card" onclick="escolher('Ações Itaú')">
-
-                        Itaú
-
-                    </button>
-
-                    <button class="invest-card" onclick="escolher('Ações Petrobras')">
-
-                        Petrobras
-
-                    </button>
-
-                    <button class="invest-card" onclick="escolher('Ações Vale')">
-
-                        Vale
-
-                    </button>
-
-                    <button class="invest-card" onclick="escolher('Ações Apple')">
-
-                        Apple
-
-                    </button>
-
+                    <details class="modal-category-details mt-2">
+                        <summary class="modal-category-summary">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class='bx bx-line-chart'></i>
+                                <span>Renda Variável</span>
+                            </div>
+                            <i class='bx bx-chevron-down modal-arrow'></i>
+                        </summary>
+                        <div class="invest-grid p-3">
+                            <button class="invest-card" onclick="escolher('Ações Itaú')">Itaú</button>
+                            <button class="invest-card" onclick="escolher('Ações Petrobras')">Petrobras</button>
+                            <button class="invest-card" onclick="escolher('Ações Vale')">Vale</button>
+                            <button class="invest-card" onclick="escolher('Ações Apple')">Apple</button>
+                        </div>
+                    </details>
                 </div>
 
             </div>
