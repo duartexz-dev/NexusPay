@@ -1,0 +1,417 @@
+/* ========================================================
+   HOMELEARN - STYLES
+   ======================================================== */
+
+/* Header da Página */
+.learn-header {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 2rem;
+}
+
+.learn-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text-pure);
+    margin: 0.5rem 0;
+}
+
+.learn-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 1rem 0 0;
+}
+
+/* Seção de Cursos */
+.courses-section {
+    animation: fadeInUp 0.6s var(--ease-out-expo);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card do Curso */
+.course-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s var(--ease-out-expo);
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card:hover {
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-md), var(--shadow-inset);
+    transform: translateY(-4px);
+}
+
+.course-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.course-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+    border: 1px solid var(--border-light);
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.course-info {
+    flex: 1;
+}
+
+.course-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-pure);
+    margin: 0 0 0.5rem;
+}
+
+.course-lessons {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 4px;
+}
+
+/* Container de Aulas */
+.lessons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+/* Item da Aula */
+.lesson-item {
+    padding: 1.25rem;
+    background: rgba(24, 24, 27, 0.5);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.lesson-item:hover {
+    background: rgba(24, 24, 27, 0.8);
+    border-color: var(--border-strong);
+}
+
+.lesson-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.lesson-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-blue);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.lesson-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-pure);
+    margin: 0.5rem 0;
+}
+
+.lesson-description {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Botão de Anotações */
+.btn-notes {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-light);
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+}
+
+.btn-notes:hover {
+    background: var(--accent-blue);
+    color: var(--text-pure);
+    border-color: var(--accent-blue);
+    transform: scale(1.1);
+}
+
+.btn-notes:active {
+    transform: scale(0.95);
+}
+
+/* ========================================================
+   MODAL DE ANOTAÇÕES
+   ======================================================== */
+
+.modal-notes {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    animation: slideDown 0.3s var(--ease-out-expo);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    padding: 1.5rem 1.5rem 0.75rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-pure);
+    margin: 0;
+}
+
+.modal-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0.5rem 0 0;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.notes-textarea {
+    width: 100%;
+    min-height: 280px;
+    padding: 1rem;
+    background: var(--bg-deep);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    resize: vertical;
+    transition: all 0.2s ease;
+}
+
+.notes-textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.notes-textarea::placeholder {
+    color: var(--text-tertiary);
+}
+
+.modal-footer {
+    padding: 1rem 1.5rem 1.5rem;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    gap: 0.75rem;
+}
+
+/* Botões do Modal */
+.btn-modal {
+    padding: 0.7rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.btn-copy {
+    background: var(--bg-surface-hover);
+    color: var(--text-primary);
+    border-color: var(--border-light);
+}
+
+.btn-copy:hover {
+    background: #3f3f46;
+    border-color: var(--border-strong);
+}
+
+.btn-save {
+    background: var(--accent-blue);
+    color: var(--text-pure);
+}
+
+.btn-save:hover {
+    background: #2563eb;
+}
+
+.btn-close-modal {
+    background: var(--bg-surface-hover);
+    color: var(--text-secondary);
+    border-color: var(--border-light);
+}
+
+.btn-close-modal:hover {
+    background: #3f3f46;
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+}
+
+/* Toast Notification (Opcional) */
+.toast-notification {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1rem 1.5rem;
+    background: var(--accent-emerald);
+    color: var(--text-pure);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    animation: slideInUp 0.3s var(--ease-out-expo);
+    z-index: 9999;
+    box-shadow: var(--shadow-lg);
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .learn-title {
+        font-size: 1.75rem;
+    }
+
+    .course-card {
+        padding: 1.5rem;
+    }
+
+    .course-header {
+        flex-direction: column;
+        gap: 0;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .course-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+    }
+
+    .lessons-container {
+        gap: 1rem;
+    }
+
+    .lesson-item {
+        padding: 1rem;
+    }
+
+    .modal-header {
+        padding: 1.25rem 1rem 0.5rem;
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+
+    .modal-footer {
+        padding: 0.75rem 1rem 1rem;
+        flex-direction: column;
+    }
+
+    .btn-modal {
+        width: 100%;
+    }
+
+    .notes-textarea {
+        min-height: 200px;
+    }
+}
+
+/* Animações gerais */
+.fade-in {
+    animation: fadeIn 0.6s var(--ease-out-expo);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Scroll Behavior Suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Backdrop do Modal */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
