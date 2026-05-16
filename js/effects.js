@@ -72,13 +72,13 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const notesButtons = document.querySelectorAll('.btn-notes');
     notesButtons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
+        button.addEventListener('mouseenter', function () {
             this.style.transform = 'scale(1.15)';
         });
-        button.addEventListener('mouseleave', function() {
+        button.addEventListener('mouseleave', function () {
             this.style.transform = 'scale(1)';
         });
-        button.addEventListener('click', function(e) {
+        button.addEventListener('click', function (e) {
             e.preventDefault();
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const notesModal = document.getElementById('notesModal');
     if (notesModal) {
-        notesModal.addEventListener('show.bs.modal', function() {
+        notesModal.addEventListener('show.bs.modal', function () {
             const textarea = document.getElementById('notesTextarea');
             if (textarea) {
                 textarea.style.opacity = '0';
@@ -106,10 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Efeito hover nos botões do modal
         const modalButtons = notesModal.querySelectorAll('.btn-modal');
         modalButtons.forEach(btn => {
-            btn.addEventListener('mouseenter', function() {
+            btn.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-2px)';
             });
-            btn.addEventListener('mouseleave', function() {
+            btn.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(0)';
             });
         });
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     modalButtons.forEach(btn => {
         const icon = btn.querySelector('i');
         if (icon) {
-            btn.addEventListener('click', function(e) {
+            btn.addEventListener('click', function (e) {
                 icon.style.animation = 'none';
                 setTimeout(() => {
                     icon.style.animation = 'pulse 0.4s ease-out';
