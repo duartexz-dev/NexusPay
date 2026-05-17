@@ -4,23 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexusPay</title>
+    <title>NexusPay - Dashboard</title>
+
+    <!-- Bootstrap & Fonts -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Custom Style Sheet -->
     <link rel="stylesheet" href="./home.css">
+</head>
 
 <body>
 
+    <!-- Premium Glow Backdrops -->
     <div class="bg-glow"></div>
+    <div class="interactive-glow" id="mouse-glow"></div>
 
+    <!-- Navigation Header -->
     <nav class="navbar navbar-expand-lg fixed-top modern-nav">
         <div class="container">
-            <a class="navbar-brand logo-brand" href="#">
+            <a class="navbar-brand logo-brand" href="#home">
                 <i class='bx bx-hive'></i> NexusPay
             </a>
             <button class="navbar-toggler border-0 shadow-none text-white" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navNexus">
+                data-bs-target="#navNexus" aria-controls="navNexus" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <i class='bx bx-menu fs-1'></i>
             </button>
             <div class="collapse navbar-collapse" id="navNexus">
@@ -33,8 +43,8 @@
                     <li class="nav-item ms-lg-3">
                         <a class="nav-profile" href="#perfil">
                             <img src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
-                                alt="Avatar">
-                            <span id="nameUser2"></span>
+                                alt="Foto do perfil de Usuário">
+                            <span id="nameUser2">Investidor</span>
                         </a>
                     </li>
                 </ul>
@@ -42,71 +52,74 @@
         </div>
     </nav>
 
+    <!-- Main Content Container -->
     <main class="container mb-5">
-        <section id="home" class="fade-in mt-4">
+
+        <!-- Balance and Quick Actions -->
+        <section id="home" class="fade-in mt-4 reveal">
             <div class="row g-4">
 
+                <!-- Balance Card -->
                 <div class="col-lg-8">
                     <div class="modern-card hero-card h-100">
                         <div class="d-flex justify-content-between align-items-start mb-4">
-                            <span class="text-label">Saldo livre</span>
+                            <span class="text-label">Saldo Livre Disponível</span>
                             <span class="badge-status"><span class="dot-live"></span> Ao vivo</span>
                         </div>
-                        <div class="d-flex align-items-center gap-3 mb-2">
-                            <h1 style="filter: blur(0px);" id="saldo" class="main-balance">0</h1>
-                            <button id="ocultBtn" class="btn-icon"><i class='bx bx-show'></i></button>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <span class="balance-symbol text-secondary fw-bold fs-2">R$</span>
+                            <h1 style="filter: blur(0px);" id="saldo" class="main-balance">0.00</h1>
+                            <button id="ocultBtn" class="btn-icon" aria-label="Ocultar Saldo"><i
+                                    class='bx bx-show'></i></button>
                         </div>
                         <div class="simple-chart"></div>
                     </div>
                 </div>
 
+                <!-- Quick Actions Grid -->
                 <div class="col-lg-4">
                     <div class="modern-card d-flex flex-column justify-content-center h-100">
-                        <span class="text-label mb-3 d-block">Ações Rápidas</span>
+                        <span class="text-label mb-3 d-block">Ações de Caixa</span>
                         <div class="d-grid gap-3">
                             <button onclick="addSaldo()" class="btn-modern btn-primary">
                                 <i class='bx bx-plus-circle fs-5'></i> Adicionar Saldo
                             </button>
                             <button onclick="btnMovi()" class="btn-modern btn-secondary">
-                                <i class='bx bx-transfer-alt fs-5'></i> Transferir
+                                <i class='bx bx-transfer-alt fs-5'></i> Alocar Ativos
+                            </button>
+                            <button onclick="atAtivos()" class="btn-modern btn-secondary btn-yield">
+                                <i class='bx bx-trending-up fs-5'></i> Render Investimentos
                             </button>
                             <button onclick="btnReset()" class="btn-modern btn-secondary btn-reset">
-                                <i class='bx bx-refresh fs-5'></i>
-                                <span>Resetar Saldo/Ativos
-                                </span>
-                            </button>
-                            <button onclick="atAtivos()" class="btn-modern btn-primary">
-                                <i class='bx bx-plus-circle fs-5'></i> Atualizar ativos
+                                <i class='bx bx-refresh fs-5'></i> Resetar Caixa
                             </button>
                         </div>
                     </div>
                 </div>
 
-
             </div>
         </section>
 
-        <!-- SEÇÃO EXPLICATIVA PREMIUM (NOVA) -->
-        <section class="mt-5 fade-in">
+        <!-- Premium Pitch & Visual Explainer -->
+        <section class="mt-5 fade-in reveal">
             <div class="premium-explainer-card">
                 <div class="row align-items-center g-4">
                     <div class="col-lg-6">
-                        <span class="text-label mb-2 d-block">Sobre o NexusPay</span>
-                        <h2 class="explainer-title mb-3">Controle total sobre o seu amanhã financeiro.</h2>
+                        <span class="text-label mb-2 d-block">Ecossistema NexusPay</span>
+                        <h2 class="explainer-title mb-3">Controle definitivo sobre o seu amanhã financeiro.</h2>
                         <p class="explainer-desc mb-4">
-                            O NexusPay é o seu ecossistema definitivo para gerenciar, investir e acompanhar seu
-                            patrimônio.
-                            Criado para oferecer uma experiência clean e sofisticada, aqui você unifica criptomoedas,
-                            ações e renda fixa em uma única visão inteligente.
+                            O NexusPay é o seu portal de alta performance para gerenciar, diversificar e impulsionar seu
+                            patrimônio. Unifique criptomoedas, ações globais e renda fixa em uma interface futurista,
+                            límpida e totalmente segura.
                         </p>
                         <div class="d-flex gap-4 flex-wrap">
                             <div class="explainer-feature">
                                 <i class='bx bx-check-shield'></i>
-                                <span>Segurança e Privacidade</span>
+                                <span>Criptografia Avançada</span>
                             </div>
                             <div class="explainer-feature">
                                 <i class='bx bx-trending-up'></i>
-                                <span>Análise em Tempo Real</span>
+                                <span>Rentabilidade Diária</span>
                             </div>
                         </div>
                     </div>
@@ -115,14 +128,14 @@
                             <div class="floating-mini-card c1">
                                 <i class='bx bx-pie-chart-alt-2'></i>
                                 <div>
-                                    <small>Patrimônio</small>
-                                    <strong>+12.5%</strong>
+                                    <small>Performance</small>
+                                    <strong>+12.8% a.a</strong>
                                 </div>
                             </div>
                             <div class="floating-mini-card c2">
                                 <i class='bx bx-analyse'></i>
                                 <div>
-                                    <small>Ecossistema</small>
+                                    <small>Caixa Global</small>
                                     <strong>Sincronizado</strong>
                                 </div>
                             </div>
@@ -132,242 +145,203 @@
             </div>
         </section>
 
-        <section id="investimentos" class="mt-5 fade-in">
-            <h5 class="text-label mb-4">Seus Ativos</h5>
+        <!-- Financial Markets and Assets -->
+        <section id="investimentos" class="mt-5 fade-in reveal">
+            <h5 class="text-label mb-4">Sua Alocação em Ativos</h5>
             <div class="row g-4">
+
+                <!-- Stock Market Card -->
                 <div class="col-md-4">
                     <div class="modern-card asset-card text-center">
                         <div class="asset-icon blue mx-auto"><i class='bx bxs-institution'></i></div>
-                        <span class="text-label mt-3 d-block">Ações</span>
-                        <span class="text-desc">R$</span>
-                        <h3 id="acoesValor" class="asset-value">0</h3>
-                        <span class="trend positive justify-content-center"><i class='bx bx-trending-up'></i>
-                            +0.5%</span>
+                        <span class="text-label mt-3 d-block">Mercado de Ações</span>
+                        <span class="text-desc text-secondary d-inline-block mb-1">R$</span>
+                        <h3 id="acoesValor" class="asset-value">0.00</h3>
+                        <span class="trend positive justify-content-center"><i class='bx bx-trending-up'></i> +0.5%
+                            hoje</span>
                     </div>
                 </div>
+
+                <!-- Fixed Income Card -->
                 <div class="col-md-4">
                     <div class="modern-card asset-card text-center">
                         <div class="asset-icon green mx-auto"><i class='bx bx-line-chart'></i></div>
-                        <span class="text-label mt-3 d-block">Renda Fixa</span>
-                        <span class="text-desc">R$</span>
-                        <h3 id="cdiValor" class="asset-value">0</h3>
-                        <span class="trend positive justify-content-center"><i class='bx bx-trending-up'></i>
-                            +0.1%</span>
+                        <span class="text-label mt-3 d-block">Renda Fixa & CDI</span>
+                        <span class="text-desc text-secondary d-inline-block mb-1">R$</span>
+                        <h3 id="cdiValor" class="asset-value">0.00</h3>
+                        <span class="trend positive justify-content-center"><i class='bx bx-trending-up'></i> +0.1%
+                            hoje</span>
                     </div>
                 </div>
+
+                <!-- Cryptocurrencies Card -->
                 <div class="col-md-4">
                     <div class="modern-card asset-card text-center">
                         <div class="asset-icon orange mx-auto"><i class='bx bxl-bitcoin'></i></div>
-                        <span class="text-label mt-3 d-block">Criptomoeda</span>
-                        <span class="text-desc">R$</span>
-                        <h3 id="btcValor" class="asset-value">0</h3>
-                        <span class="trend positive justify-content-center"><i class='bx bx-trending-up'></i>
-                            0.2%</span>
+                        <span class="text-label mt-3 d-block">Criptomoedas</span>
+                        <span class="text-desc text-secondary d-inline-block mb-1">R$</span>
+                        <h3 id="btcValor" class="asset-value">0.00</h3>
+                        <span class="trend positive justify-content-center"><i class='bx bx-trending-up'></i> +0.2%
+                            hoje</span>
                     </div>
                 </div>
+
             </div>
         </section>
-        <details class="modern-details mt-4">
 
+        <!-- Transaction Logs & History Details -->
+        <details class="modern-details mt-4 fade-in reveal">
             <summary class="details-summary">
                 <div class="d-flex align-items-center gap-2">
-                    <i class='bx bx-history fs-5'></i>
-                    <span>Ver Histórico de Transações</span>
+                    <i class='bx bx-history fs-5 text-secondary'></i>
+                    <span class="fw-semibold">Ver Histórico de Transações</span>
                 </div>
-
-                <i class='bx bx-chevron-down arrow-details'></i>
+                <i class='bx bx-chevron-down arrow-details fs-5'></i>
             </summary>
 
-            <section id="gastos" class="mt-4 fade-in">
-                <h5 class="text-label mb-4">Últimas Transações</h5>
-
-                <div class="modern-card p-0 overflow-hidden">
+            <section id="gastos" class="mt-4">
+                <h5 class="text-label mb-4">Últimas Transações no Caixa</h5>
+                <div class="modern-card p-0 overflow-hidden border-0">
                     <div class="table-responsive">
                         <table class="table modern-table mb-0 text-nowrap">
-
                             <thead>
                                 <tr>
                                     <th>Data</th>
                                     <th>Descrição</th>
                                     <th>Categoria</th>
-                                    <th>Valor</th>
+                                    <th class="text-end">Valor</th>
                                 </tr>
                             </thead>
-
                             <tbody id="Movis">
-
+                                <!-- Dynamic rows are injected here -->
                             </tbody>
-
                         </table>
                     </div>
                 </div>
             </section>
-
         </details>
-        <section id="perfil" class="mt-5 pb-5 fade-in">
 
-            <h5 class="text-label mb-4">
-                Sua Conta
-            </h5>
+        <!-- User Accounts & Customization -->
+        <section id="perfil" class="mt-5 pb-5 fade-in reveal">
+            <h5 class="text-label mb-4">Gerenciamento de Conta</h5>
 
+            <!-- Resolved row unclosed tag bug -->
             <div class="row justify-content-center">
-
-                <div class="col-lg-7">
-
+                <div class="col-lg-8">
                     <div class="modern-card profile-card">
 
+                        <!-- Premium Glowing Background inside card -->
                         <div class="profile-glow"></div>
 
-                        <!-- TOPO -->
+                        <!-- Top Header -->
                         <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
-
                             <div class="d-flex align-items-center gap-3">
-
                                 <img id="perfilFoto"
                                     src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
-                                    alt="Perfil" class="profile-avatar">
-
+                                    alt="Avatar de Usuário" class="profile-avatar">
                                 <div>
-
-                                    <h3 id="nameUser" class="text-white fw-bold mb-1">
-
-                                    </h3>
-
-                                    <span id="perfilEmail" class="text-desc small">
-
-                                    </span>
-
+                                    <h3 id="nameUser" class="text-white fw-bold mb-1">Investidor</h3>
+                                    <span id="perfilEmail"
+                                        class="text-desc text-secondary small">usuario@nexuspay.com</span>
                                 </div>
-
                             </div>
-
-                            <button onclick="btnPersonalizar()" class="btn-icon">
+                            <button onclick="btnPersonalizar()" class="btn-icon" aria-label="Editar Nome do Perfil">
                                 <i class='bx bx-edit-alt'></i>
                             </button>
-
                         </div>
 
-                        <!-- BADGE -->
+                        <!-- Badge Membership -->
                         <div class="mt-4">
-
                             <span class="badge-plan">
-                                <i class='bx bx-crown'></i>
-                                Nexus Beta
+                                <i class='bx bx-crown text-warning me-1'></i> Nexus Premium
                             </span>
-
                         </div>
 
-                        <!-- INFO -->
-                        <div class="row g-3 mt-2">
-
+                        <!-- Resolved metric grids row with 3 perfectly aligned columns -->
+                        <div class="row g-3 mt-3">
+                            <!-- Saldo livre -->
                             <div class="col-md-4">
-
                                 <div class="info-mini-card">
-
-                                    <i class='bx bx-wallet'></i>
-                                    <span>
-                                        R$
-                                    </span>
-                                    <span id="saldo2">
-                                        0
-                                    </span>
-
-                                    <small>Saldo</small>
-
+                                    <i class='bx bx-wallet text-secondary mb-1 fs-5'></i>
+                                    <div class="fw-semibold text-white">R$ <span id="saldo2">0.00</span></div>
+                                    <small class="text-secondary" style="font-size: 0.75rem;">Saldo de Caixa</small>
                                 </div>
-
                             </div>
 
+                            <!-- Patrimônio alocado -->
                             <div class="col-md-4">
-
                                 <div class="info-mini-card">
-
-                                    <i class='bx bx-line-chart'></i>
-
-                                    <span>
-                                        R$
-                                    </span>
-                                    <span id="patrimonio">
-
-                                    </span>
-
-                                    <small>Patrimônio</small>
-
+                                    <i class='bx bx-line-chart text-secondary mb-1 fs-5'></i>
+                                    <div class="fw-semibold text-white">R$ <span id="patrimonio">0.00</span></div>
+                                    <small class="text-secondary" style="font-size: 0.75rem;">Patrimônio Alocado</small>
                                 </div>
-
                             </div>
 
-
-
-
-                            <!-- FOOTER -->
-                            <div class="profile-footer mt-4">
-
-                                <div class="profile-status">
-
-                                    <span class="online-dot"></span>
-
-                                    Conta protegida e sincronizada
-
+                            <!-- Status de Fidelidade (Newly added 3rd column for alignment) -->
+                            <div class="col-md-4">
+                                <div class="info-mini-card">
+                                    <i class='bx bx-crown text-secondary mb-1 fs-5'></i>
+                                    <div class="fw-semibold text-white">VIP Level 1</div>
+                                    <small class="text-secondary" style="font-size: 0.75rem;">Fidelidade Nexus</small>
                                 </div>
-
-                                <button onclick="btnPersonalizar()" class="btn-modern btn-primary">
-
-                                    <i class='bx bx-user'></i>
-
-                                    Personalizar Perfil
-
-                                </button>
-
                             </div>
+                        </div>
 
+                        <!-- Profile Customization Footer -->
+                        <div
+                            class="profile-footer mt-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
+                            <div class="profile-status text-secondary small d-flex align-items-center gap-2">
+                                <span class="online-dot"></span>
+                                Conta assegurada & criptografada
+                            </div>
+                            <button onclick="btnPersonalizar()" class="btn-modern btn-primary">
+                                <i class='bx bx-user'></i> Personalizar Nome
+                            </button>
                         </div>
 
                     </div>
-
                 </div>
-
+            </div> <!-- Closed row correctly here -->
         </section>
+
     </main>
+
+    <!-- ========================================================
+       MODAIS (Sleek Dark Glassmorphism Designs)
+       ======================================================== -->
+
+    <!-- Modal: Allocate Assets -->
     <div style="display: none;" id="modal-movimentacao" class="modern-modal-overlay">
         <div class="modern-modal">
-
-            <div class="modal-header border-0 p-0 mb-3">
-                <h5 class="text-white m-0">Nova Movimentação</h5>
+            <div class="modal-header border-0 p-0 mb-2">
+                <h5 class="text-white fw-bold m-0">Alocação de Ativos</h5>
             </div>
-
-            <p class="text-muted text-sm">
-                Transfira fundos ou registre um investimento.
+            <p class="text-secondary small mb-4">
+                Transfira fundos do seu saldo livre direto para investimentos selecionados.
             </p>
-
-            <div class="modal-body p-0 mt-3">
-
+            <div class="modal-body p-0">
                 <!-- VALOR -->
-                <label class="text-label mb-2">Valor</label>
-
+                <label for="valor" class="text-label mb-2 d-block">Valor do Aporte</label>
                 <div class="modern-input mb-3">
-                    <span class="text-muted">R$</span>
-                    <input type="number" id="valor" placeholder="0.00">
+                    <span class="text-secondary">R$</span>
+                    <input type="number" id="valor" placeholder="0.00" min="0">
                 </div>
 
-                <!-- INPUT -->
-                <label class="text-label mb-2">
-                    Destino / Investimento
-                </label>
-
+                <!-- TARGET SELECTION -->
+                <label for="ondeElevai" class="text-label mb-2 d-block">Ativo Destino</label>
                 <div class="modern-input mb-4">
-                    <i class='bx bx-wallet text-muted'></i>
-
-                    <input type="text" id="ondeElevai" placeholder="Escolha abaixo..." readonly>
+                    <i class='bx bx-wallet text-secondary'></i>
+                    <input type="text" id="ondeElevai" placeholder="Escolha um ativo abaixo..." readonly>
                 </div>
 
-                <!-- CRIPTO -->
-                <!-- CATEGORIAS EM DETAILS -->
+                <!-- CATEGORIES SELECTIONS -->
                 <div class="modal-categories">
+
+                    <!-- Cryptos -->
                     <details class="modal-category-details">
                         <summary class="modal-category-summary">
                             <div class="d-flex align-items-center gap-2">
-                                <i class='bx bxl-bitcoin'></i>
+                                <i class='bx bxl-bitcoin text-warning'></i>
                                 <span>Criptomoedas</span>
                             </div>
                             <i class='bx bx-chevron-down modal-arrow'></i>
@@ -378,14 +352,15 @@
                             <button class="invest-card" onclick="escolher('Ethereum')"><i class='bx bx-coin'></i>
                                 Ethereum</button>
                             <button class="invest-card" onclick="escolher('DogCoin')"><i class='bx bx-money'></i>
-                                DogCoin</button>
+                                Doge</button>
                         </div>
                     </details>
 
+                    <!-- Fixed Income -->
                     <details class="modal-category-details mt-2">
                         <summary class="modal-category-summary">
                             <div class="d-flex align-items-center gap-2">
-                                <i class='bx bx-bank'></i>
+                                <i class='bx bx-bank text-success'></i>
                                 <span>Renda Fixa</span>
                             </div>
                             <i class='bx bx-chevron-down modal-arrow'></i>
@@ -398,11 +373,12 @@
                         </div>
                     </details>
 
+                    <!-- Stocks -->
                     <details class="modal-category-details mt-2">
                         <summary class="modal-category-summary">
                             <div class="d-flex align-items-center gap-2">
-                                <i class='bx bx-line-chart'></i>
-                                <span>Renda Variável</span>
+                                <i class='bx bx-line-chart text-info'></i>
+                                <span>Mercado de Ações</span>
                             </div>
                             <i class='bx bx-chevron-down modal-arrow'></i>
                         </summary>
@@ -413,76 +389,76 @@
                             <button class="invest-card" onclick="escolher('Ações Apple')">Apple</button>
                         </div>
                     </details>
+
                 </div>
-
             </div>
-
             <div class="modal-footer border-0 p-0 mt-4 flex-nowrap gap-2">
-
-                <button class="btn-modern btn-secondary" onclick="cancel()">
-
-                    Cancelar
-
-                </button>
-
-                <button class="btn-modern btn-primary" onclick="trasferir()">
-
-                    Transferir
-
-                </button>
-
+                <button class="btn-modern btn-secondary w-50" onclick="cancel()">Cancelar</button>
+                <button class="btn-modern btn-primary w-50" onclick="trasferir()">Transferir</button>
             </div>
-
         </div>
     </div>
 
+    <!-- Modal: Personalize Name -->
     <div style="display: none;" id="modal-Perfil" class="modern-modal-overlay">
         <div class="modern-modal">
-            <div class="modal-header border-0 p-0 mb-3">
-                <h5 class="text-white m-0">Novo Perfil!</h5>
+            <div class="modal-header border-0 p-0 mb-2">
+                <h5 class="text-white fw-bold m-0">Editar Assinatura</h5>
             </div>
-            <p class="text-muted text-sm">Editando perfil...</p>
-            <div class="modal-body p-0 mt-3">
-                <label class="text-label mb-2">Seu nome</label>
+            <p class="text-secondary small mb-4">Escolha como seu nome será impresso no painel.</p>
+            <div class="modal-body p-0">
+                <label for="name" class="text-label mb-2 d-block">Seu Nome</label>
                 <div class="modern-input">
-                    <i class='bx bx-user text-muted'></i>
-                    <input type="text" id="name" placeholder="Ex:Arthur,Amanda e etc...">
+                    <i class='bx bx-user text-secondary'></i>
+                    <input type="text" id="name" placeholder="Ex: Arthur Duarte" maxlength="20">
                 </div>
             </div>
             <div class="modal-footer border-0 p-0 mt-4 flex-nowrap gap-2">
-                <button class="btn-modern btn-secondary" onclick="cancelPersonalizacao()">Cancelar</button>
-                <button class="btn-modern btn-primary" onclick="Personalizar()">Confirmar</button>
+                <button class="btn-modern btn-secondary w-50" onclick="cancelPersonalizacao()">Cancelar</button>
+                <button class="btn-modern btn-primary w-50" onclick="Personalizar()">Salvar</button>
             </div>
         </div>
     </div>
 
+    <!-- Modal: Add Free Balance -->
     <div style="display: none;" id="modal-body" class="modern-modal-overlay">
         <div class="modern-modal">
-            <div class="modal-header border-0 p-0 mb-3">
-                <h5 class="text-white m-0">Adicionar Saldo</h5>
+            <div class="modal-header border-0 p-0 mb-2">
+                <h5 class="text-white fw-bold m-0">Adicionar Saldo</h5>
             </div>
-            <p class="text-muted text-sm">Atualize seu caixa para análises precisas.</p>
-            <div class="modal-body p-0 mt-3">
-                <label class="text-label mb-2">Valor do aporte</label>
+            <p class="text-secondary small mb-4">Deposite saldo fictício para simular operações no caixa.</p>
+            <div class="modal-body p-0">
+                <label for="saldoAdd" class="text-label mb-2 d-block">Valor do Aporte</label>
                 <div class="modern-input">
-                    <span class="text-muted">R$</span>
-                    <input type="number" id="saldoAdd" placeholder="0.00">
+                    <span class="text-secondary">R$</span>
+                    <input type="number" id="saldoAdd" placeholder="0.00" min="0">
                 </div>
             </div>
             <div class="modal-footer border-0 p-0 mt-4 flex-nowrap gap-2">
-                <button class="btn-modern btn-secondary" onclick="cancelSaldo()">Cancelar</button>
-                <button class="btn-modern btn-primary" onclick="confirmSaldo()">Confirmar</button>
+                <button class="btn-modern btn-secondary w-50" onclick="cancelSaldo()">Cancelar</button>
+                <button class="btn-modern btn-primary w-50" onclick="confirmSaldo()">Confirmar</button>
             </div>
         </div>
     </div>
-    <div class="stars">
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
+
+    <!-- Canvas Interactive Stars (Fully styled in home.css) -->
+    <div class="stars-backdrop">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
     </div>
 
+    <!-- Scripts -->
     <script src="../js/Home.js"></script>
     <script src="../js/rendasAtivosAI.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Intersection Observer & Interactive Glows -->
     <script>
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -490,8 +466,17 @@
                     entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }, { threshold: 0.05 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Interactive mouse glow tracker
+        const glow = document.getElementById('mouse-glow');
+        if (glow) {
+            document.addEventListener('mousemove', (e) => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
+        }
     </script>
 </body>
 

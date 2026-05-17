@@ -5,26 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos - NexusPay</title>
+
+    <!-- Bootstrap & Fonts -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- CSS Sheets -->
     <link rel="stylesheet" href="../html/home.css">
     <link rel="stylesheet" href="./homeLearn.css">
 </head>
 
 <body>
 
+    <!-- Premium Backdrops -->
     <div class="bg-glow"></div>
+    <div class="interactive-glow" id="mouse-glow"></div>
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg fixed-top modern-nav">
         <div class="container">
-            <a class="navbar-brand logo-brand" href="#">
+            <a class="navbar-brand logo-brand" href="../html/home.html">
                 <i class='bx bx-hive'></i> NexusPay
             </a>
             <button class="navbar-toggler border-0 shadow-none text-white" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navNexus">
+                data-bs-target="#navNexus" aria-controls="navNexus" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <i class='bx bx-menu fs-1'></i>
             </button>
             <div class="collapse navbar-collapse" id="navNexus">
@@ -34,10 +41,10 @@
                     <li class="nav-item"><a class="nav-link" href="../html/home.html#gastos">Extrato</a></li>
                     <li class="nav-item"><a class="nav-link active" href="#">Como investir?</a></li>
                     <li class="nav-item ms-lg-3">
-                        <a class="nav-profile" href="#perfil">
+                        <a class="nav-profile" href="../html/home.html#perfil">
                             <img src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
                                 alt="Avatar">
-                            <span id="nameUser2"></span>
+                            <span id="nameUser2">Investidor</span>
                         </a>
                     </li>
                 </ul>
@@ -45,385 +52,730 @@
         </div>
     </nav>
 
+    <!-- Main Content -->
     <main class="container mb-5">
+
         <!-- HEADER DA PÁGINA -->
-        <section id="header-learn" class="fade-in mt-4">
+        <section id="header-learn" class="fade-in mt-4 reveal">
             <div class="learn-header">
-                <span class="text-label mb-2 d-block">Educação Financeira</span>
+                <span class="text-label mb-2 d-block">Módulo de Educação Financeira</span>
                 <h1 class="learn-title">Aprenda a Investir</h1>
-                <p class="learn-subtitle">Domine as estratégias essenciais para potencializar seus investimentos e
-                    crescer seu patrimônio</p>
+                <p class="learn-subtitle">Domine as estratégias essenciais com nossos cursos sob medida para
+                    potencializar seus investimentos e acelerar a independência financeira.</p>
             </div>
         </section>
 
-        <!-- SEÇÃO DE CURSOS -->
-        <section id="cursos" class="courses-section fade-in mt-5">
+        <!-- SEÇÃO DE CURSOS (Resolved broken grid nesting issues) -->
+        <section id="cursos" class="courses-section fade-in mt-5 reveal">
             <div class="row g-4">
 
-                <!-- CURSO 1 -->
-                <div class="col-lg-6 col-xl-4">
+
+
+                <!-- ========================= -->
+                <!-- CURSO 1: FUNDAMENTOS -->
+                <!-- ========================= -->
+                <div class="col-lg-6 col-md-12">
                     <div class="course-card modern-card">
+
                         <div class="course-header">
                             <div class="course-icon">
-                                <i class='bx bx-trending-up'></i>
+                                <i class='bx bx-book-open'></i>
                             </div>
+
                             <div class="course-info">
-                                <h3 class="course-title">Fundamentos do Mercado</h3>
+                                <h3 class="course-title">Rendas Fixas e Rendas Varáveis</h3>
                                 <span class="course-lessons">10 Aulas</span>
                             </div>
                         </div>
 
                         <div class="lessons-container">
+
                             <!-- AULA 1 -->
                             <div class="lesson-item">
+
                                 <div class="lesson-header">
                                     <span class="lesson-number">Aula 1</span>
                                 </div>
-                                <h4 class="lesson-title">Introdução ao Mercado Financeiro</h4>
-                                <p class="lesson-description">Conheça os conceitos básicos do mercado financeiro, como
-                                    funciona a bolsa de valores e os principais tipos de investimentos disponíveis
-                                    para iniciantes.</p>
+
+                                <div class="video-wrapper mb-3">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/zAJgVIOw6KU"
+                                            title="Introdução ao Mercado Financeiro" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+
+                                <h4 class="lesson-title">
+                                    Oque é Renda Fixa?
+                                </h4>
+
+                                <p class="lesson-description">
+                                    Aprenda oque é e como funciona a <strong>Renda Fixa</strong> com
+                                </p>
+
+                                <details>
+                                    <summary>Resumo Para anotações:</summary>
+                                    <div class="card bg-dark text-light border-0 shadow-lg rounded-4 p-3">
+
+                                        <h4 class="text-info fw-bold mb-3">
+                                            📚 Resumo — Renda Fixa
+                                        </h4>
+
+                                        <p class="text-secondary small">
+                                            <strong class="text-success">Renda Fixa</strong>
+                                            são investimentos mais seguros, onde existe uma previsão de rendimento.
+                                        </p>
+
+                                        <div class="mb-3">
+                                            <h6 class="text-warning fw-bold">💰 CDI</h6>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                Taxa usada como referência em vários investimentos.
+                                                Muitos CDBs rendem <strong class="text-info">100% do CDI</strong>.
+                                            </p>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <h6 class="text-orange fw-bold" style="color:#fb923c;">
+                                                🏦 CDB
+                                            </h6>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                Você empresta dinheiro ao banco e recebe rendimentos em troca.
+                                            </p>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <h6 class="text-danger fw-bold">📈 SELIC</h6>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                Taxa básica de juros do Brasil.
+                                                Ela influencia investimentos, empréstimos e financiamentos.
+                                            </p>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <h6 class="fw-bold" style="color:#a855f7;">
+                                                🏠 LCI
+                                            </h6>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                Investimento ligado ao mercado imobiliário
+                                                e isento de Imposto de Renda.
+                                            </p>
+                                        </div>
+
+                                        <div>
+                                            <h6 class="fw-bold" style="color:#06b6d4;">
+                                                🌾 LCA
+                                            </h6>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                Parecida com a LCI, mas ligada ao agronegócio.
+                                                Também é isenta de IR.
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </details>
+
                             </div>
 
                             <!-- AULA 2 -->
                             <div class="lesson-item">
+
                                 <div class="lesson-header">
                                     <span class="lesson-number">Aula 2</span>
                                 </div>
-                                <h4 class="lesson-title">Tipos de Ativos Financeiros</h4>
-                                <p class="lesson-description">Aprenda a diferença entre ações, títulos, fundos e outros
-                                    ativos. Entenda qual é o melhor para o seu perfil de investidor.</p>
+
+                                <div class="video-wrapper mb-3">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/KDvVNICHnds"
+                                            title="Tipos de Ativos Financeiros" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+
+                                <h4 class="lesson-title">
+                                    Com 50R$ da para começar?
+                                </h4>
+
+                                <p class="lesson-description">
+                                    CDI,FUNDOS IMOBILIÁRIOS e TESOURO SELIC <br> Com apenas 50R$ já da para começar
+                                    nesses três
+                                </p>
+                                <details>
+                                    <summary>Resumo para anotações</summary>
+                                    <div class="card bg-dark text-light border-0 shadow-lg rounded-4 p-3">
+
+                                        <h4 class="text-info fw-bold mb-3">
+                                            📚 Como Investir
+                                        </h4>
+
+                                        <div class="mb-3">
+                                            <h6 class="text-warning fw-bold">
+                                                1️⃣ Criar conta em um banco
+                                            </h6>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                Abra conta em bancos confiáveis como
+                                                <strong class="text-info">Nubank</strong>,
+                                                <strong class="text-success">Inter</strong>
+                                                ou
+                                                <strong style="color:#a855f7;">PicPay</strong>.
+                                            </p>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <h6 class="text-success fw-bold">
+                                                2️⃣ Colocar dinheiro no cofrinho/CDI
+                                            </h6>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                Deposite dinheiro na conta e deixe no saldo que rende
+                                                ou em “Caixinhas/Cofrinhos”.
+                                            </p>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                O ideal é buscar rendimento de
+                                                <strong class="text-warning">100% do CDI ou mais.</strong>
+                                            </p>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <h6 class="fw-bold" style="color:#22c55e;">
+                                                3️⃣ Tesouro Selic
+                                            </h6>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                Vá na área de investimentos do banco,
+                                                procure por
+                                                <strong class="text-danger">Tesouro Selic</strong>
+                                                e escolha quanto deseja investir.
+                                            </p>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                É um dos investimentos mais seguros do Brasil.
+                                            </p>
+                                        </div>
+
+                                        <div>
+                                            <h6 class="fw-bold" style="color:#38bdf8;">
+                                                4️⃣ Fundos Imobiliários
+                                            </h6>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                Compre cotas de fundos pela corretora do banco
+                                                para receber rendimentos mensais.
+                                            </p>
+
+                                            <p class="small text-warning mb-0">
+                                                ⚠️ O valor pode subir ou cair.
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </details>
                             </div>
 
                             <!-- AULA 3 -->
                             <div class="lesson-item">
+
                                 <div class="lesson-header">
                                     <span class="lesson-number">Aula 3</span>
                                 </div>
-                                <h4 class="lesson-title">Análise Fundamental vs Técnica</h4>
-                                <p class="lesson-description">Descubra as duas principais metodologias de análise de
-                                    investimentos e como utilizá-las para tomar decisões mais assertivas.</p>
+
+                                <div class="video-wrapper mb-3">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/-mzZHVrpM9g"
+                                            title="Como Investir do Zero" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+
+                                <h4 class="lesson-title">
+                                    Investindo em cada <strong>Renda Fixa</strong> na prática! <br> Quanto rendeu em
+                                    cada? qual é a melhor opção?
+                                </h4>
+
+                                <p class="lesson-description">
+                                    Peter Jordan do canal Nerds de Negócios investiu 1000 reias <br> em cada tipo de
+                                    renda fixa , para ver qual é a melhor.
+                                </p>
+
+                                <details>
+                                    <summary>Resumo para anotações</summary>
+                                    <div class="card bg-dark text-light border-0 shadow-lg rounded-4 p-3">
+
+                                        <h4 class="text-info fw-bold mb-3">
+                                            💰 Simulação — R$1000 Investidos
+                                        </h4>
+
+                                        <p class="small text-secondary">
+                                            Simulações aproximadas usando taxas atuais de renda fixa
+                                            entre 100% CDI, Tesouro Selic e LCI/LCA.
+                                        </p>
+
+                                        <div class="table-responsive">
+
+                                            <table
+                                                class="table table-dark table-bordered align-middle text-center small">
+
+                                                <thead>
+                                                    <tr class="table-secondary text-dark">
+                                                        <th>Tempo</th>
+                                                        <th>CDI / CDB</th>
+                                                        <th>LCI / LCA</th>
+                                                        <th>Tesouro Selic</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1 Ano</td>
+                                                        <td>R$1.120</td>
+                                                        <td>R$1.135</td>
+                                                        <td>R$1.115</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>2 Anos</td>
+                                                        <td>R$1.255</td>
+                                                        <td>R$1.290</td>
+                                                        <td>R$1.245</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>5 Anos</td>
+                                                        <td>R$1.850</td>
+                                                        <td>R$1.980</td>
+                                                        <td>R$1.800</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>10 Anos</td>
+                                                        <td>R$3.420</td>
+                                                        <td>R$3.780</td>
+                                                        <td>R$3.250</td>
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+
+                                        </div>
+
+                                        <div class="mt-3">
+
+                                            <h6 class="text-warning fw-bold">
+                                                🏆 Melhor para iniciantes
+                                            </h6>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                O mais recomendado para começar geralmente é:
+                                            </p>
+
+                                            <ul class="small mt-2">
+                                                <li>
+                                                    ✅ <strong class="text-info">CDI/CDB</strong>
+                                                    em bancos confiáveis
+                                                </li>
+
+                                                <li>
+                                                    ✅ <strong class="text-danger">Tesouro Selic</strong>
+                                                    para reserva de emergência
+                                                </li>
+                                            </ul>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                Eles são mais seguros, simples e fáceis de entender.
+                                            </p>
+
+                                        </div>
+
+                                        <div class="mt-3">
+
+                                            <h6 class="fw-bold" style="color:#22c55e;">
+                                                📌 Melhor rendimento
+                                            </h6>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                Em muitos casos,
+                                                <strong class="text-success">LCI e LCA</strong>
+                                                podem render mais no longo prazo,
+                                                porque geralmente são isentas de Imposto de Renda.
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+                                </details>
+
                             </div>
 
                             <!-- AULA 4 -->
                             <div class="lesson-item">
+
                                 <div class="lesson-header">
                                     <span class="lesson-number">Aula 4</span>
                                 </div>
-                                <h4 class="lesson-title">Risco e Retorno</h4>
-                                <p class="lesson-description">Compreenda a relação fundamental entre risco e retorno,
-                                    e como calcular o risco adequado para suas estratégias de investimento.</p>
+
+                                <div class="video-wrapper mb-3">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/pk6b-sO-sdM"
+                                            title="Organização Financeira" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+
+                                <h4 class="lesson-title">
+                                    Aprenda mais sobre CDB com o Primo RICO(Tiago Nigro)
+                                </h4>
+
+                                <p class="lesson-description">
+                                    Como investir em CDB para iniciantes.
+                                </p>
+                                <details>
+                                    <summary>Resumo para anotações</summary>
+                                    <div class="card bg-dark text-light border-0 shadow-lg rounded-4 p-3">
+
+                                        <h4 class="text-info fw-bold mb-3">
+                                            🏦 Como Investir em CDBs pelos Bancos
+                                        </h4>
+
+                                        <p class="small text-secondary">
+                                            Os bancos permitem investir em CDBs diretamente pelo aplicativo.
+                                        </p>
+
+                                        <div class="mb-3">
+                                            <h6 class="text-warning fw-bold">
+                                                📱 1️⃣ Entrar no banco
+                                            </h6>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                Abra aplicativos como
+                                                <strong class="text-info">Nubank</strong>,
+                                                <strong class="text-success">Inter</strong>,
+                                                <strong style="color:#a855f7;">PicPay</strong>
+                                                ou outros bancos confiáveis.
+                                            </p>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <h6 class="text-danger fw-bold">
+                                                💰 2️⃣ Área de investimentos
+                                            </h6>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                Vá até a aba:
+                                            </p>
+
+                                            <ul class="small mt-2 mb-0">
+                                                <li>✔️ Investimentos</li>
+                                                <li>✔️ Renda Fixa</li>
+                                                <li>✔️ CDB</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <h6 class="fw-bold" style="color:#22c55e;">
+                                                📈 3️⃣ Escolher o CDB
+                                            </h6>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                Escolha um CDB com:
+                                            </p>
+
+                                            <ul class="small mt-2 mb-0">
+                                                <li>💵 100% CDI ou mais</li>
+                                                <li>🔓 Liquidez diária</li>
+                                                <li>🛡️ Proteção do FGC</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <h6 class="fw-bold" style="color:#38bdf8;">
+                                                💳 4️⃣ Investir
+                                            </h6>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                Escolha o valor,
+                                                confirme o investimento
+                                                e o dinheiro começará a render automaticamente.
+                                            </p>
+                                        </div>
+
+                                        <div>
+                                            <h6 class="fw-bold" style="color:#facc15;">
+                                                🧠 Dica Principal
+                                            </h6>
+
+                                            <p class="small text-light-emphasis mb-0">
+                                                Para iniciantes,
+                                                os melhores geralmente são os CDBs
+                                                com liquidez diária e rendimento próximo de
+                                                <strong class="text-success">100% do CDI.</strong>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </details>
                             </div>
 
                             <!-- AULA 5 -->
                             <div class="lesson-item">
+
                                 <div class="lesson-header">
-                                    <span class="lesson-number">Aula 5</span>
+                                    <span class="lesson-number">
+                                        Aula 5
+                                    </span>
                                 </div>
-                                <h4 class="lesson-title">Diversificação de Portfólio</h4>
-                                <p class="lesson-description">Aprenda por que diversificar é essencial e como
-                                    distribuir seus investimentos de forma inteligente.</p>
+
+                                <h4 class="lesson-title">
+                                    💰 Como Calcular Investimentos
+                                </h4>
+
+                                <p class="lesson-description">
+                                    Aprenda como funcionam CDI, CDB, LCI, LCA e Tesouro Selic.
+                                </p>
+
+                                <div class="card bg-dark border-0 rounded-4 p-3 mt-3">
+
+                                    <p class="small text-light mb-2">
+                                        <strong class="text-warning">CDI/CDB:</strong>
+                                        investimentos de bancos que rendem por porcentagem do CDI.
+                                    </p>
+
+                                    <div class="bg-black rounded-3 p-2 mb-3">
+                                        <small class="text-info">
+                                            Fórmula:
+                                            Valor x (1 + Taxa) x Tempo
+                                        </small>
+                                    </div>
+
+                                    <p class="small text-light mb-2">
+                                        <strong class="text-danger">Tesouro Selic:</strong>
+                                        investimento do governo, ideal para reserva de emergência.
+                                    </p>
+
+                                    <div class="bg-black rounded-3 p-2 mb-3">
+                                        <small class="text-info">
+                                            Fórmula:
+                                            Dinheiro + Juros SELIC
+                                        </small>
+                                    </div>
+
+                                    <p class="small text-light mb-2">
+                                        <strong style="color:#a855f7;">LCI/LCA:</strong>
+                                        parecidos com CDB, mas sem Imposto de Renda.
+                                    </p>
+
+                                    <div class="bg-black rounded-3 p-2 mb-3">
+                                        <small class="text-info">
+                                            Fórmula:
+                                            Valor × Taxa sem IR
+                                        </small>
+                                    </div>
+
+                                    <div class="table-responsive">
+
+                                        <table
+                                            class="table table-dark table-bordered text-center align-middle small mb-0">
+
+                                            <thead>
+                                                <tr class="table-secondary text-dark">
+                                                    <th>Tempo</th>
+                                                    <th>CDB</th>
+                                                    <th>LCI</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>1 Ano</td>
+                                                    <td>R$1120</td>
+                                                    <td>R$1135</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>10 Anos</td>
+                                                    <td>R$3420</td>
+                                                    <td>R$3780</td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
                             </div>
 
                             <!-- AULA 6 -->
                             <div class="lesson-item">
+
                                 <div class="lesson-header">
                                     <span class="lesson-number">Aula 6</span>
                                 </div>
-                                <h4 class="lesson-title">Índices do Mercado</h4>
-                                <p class="lesson-description">Entenda o que são índices como Ibovespa, S&P 500 e como
-                                    eles afetam suas decisões de investimento.</p>
+
+                                <div class="video-wrapper mb-3">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/Uu4Nq4h8QJY" title="Criptomoedas"
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+
+                                <h4 class="lesson-title">
+                                    Introdução às Criptomoedas
+                                </h4>
+
+                                <p class="lesson-description">
+                                    Conheça Bitcoin, Ethereum e os fundamentos básicos do mercado cripto.
+                                </p>
+
                             </div>
 
                             <!-- AULA 7 -->
                             <div class="lesson-item">
+
                                 <div class="lesson-header">
                                     <span class="lesson-number">Aula 7</span>
                                 </div>
-                                <h4 class="lesson-title">Custos e Taxas de Investimento</h4>
-                                <p class="lesson-description">Identifique e minimize os custos envolvidos em seus
-                                    investimentos para maximizar seus retornos.</p>
+
+                                <div class="video-wrapper mb-3">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/4M5X0SKXQSM"
+                                            title="Investindo em Ações" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+
+                                <h4 class="lesson-title">
+                                    Como Investir em Ações
+                                </h4>
+
+                                <p class="lesson-description">
+                                    Entenda análise de empresas, dividendos e valorização de ações.
+                                </p>
+
                             </div>
 
                             <!-- AULA 8 -->
                             <div class="lesson-item">
+
                                 <div class="lesson-header">
                                     <span class="lesson-number">Aula 8</span>
                                 </div>
-                                <h4 class="lesson-title">Ciclos do Mercado</h4>
-                                <p class="lesson-description">Reconheça os ciclos de alta e baixa do mercado e como
-                                    adaptar suas estratégias para cada momento.</p>
+
+                                <div class="video-wrapper mb-3">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/eXl7s1Y0m3A"
+                                            title="Fundos Imobiliários" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+
+                                <h4 class="lesson-title">
+                                    Fundos Imobiliários
+                                </h4>
+
+                                <p class="lesson-description">
+                                    Aprenda como gerar renda passiva utilizando FIIs.
+                                </p>
+
                             </div>
 
                             <!-- AULA 9 -->
                             <div class="lesson-item">
+
                                 <div class="lesson-header">
                                     <span class="lesson-number">Aula 9</span>
                                 </div>
-                                <h4 class="lesson-title">Psicologia do Investidor</h4>
-                                <p class="lesson-description">Aprenda como controlar suas emoções e evitar decisões
-                                    impulsivas que prejudicam seus investimentos.</p>
+
+                                <div class="video-wrapper mb-3">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/WJQ8k3iXxk8"
+                                            title="Liberdade Financeira" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+
+                                <h4 class="lesson-title">
+                                    Liberdade Financeira
+                                </h4>
+
+                                <p class="lesson-description">
+                                    Estratégias para construir patrimônio e alcançar independência financeira.
+                                </p>
+
                             </div>
 
                             <!-- AULA 10 -->
                             <div class="lesson-item">
+
                                 <div class="lesson-header">
                                     <span class="lesson-number">Aula 10</span>
                                 </div>
-                                <h4 class="lesson-title">Construindo Sua Estratégia</h4>
-                                <p class="lesson-description">Coloque em prática tudo aprendido e construa sua
-                                    estratégia de investimento personalizada.</p>
+
+                                <div class="video-wrapper mb-3">
+                                    <div class="ratio ratio-16x9">
+                                        <iframe src="https://www.youtube.com/embed/YQ5nQ4XzQ7M"
+                                            title="Mentalidade do Investidor" allowfullscreen>
+                                        </iframe>
+                                    </div>
+                                </div>
+
+                                <h4 class="lesson-title">
+                                    Mentalidade do Investidor
+                                </h4>
+
+                                <p class="lesson-description">
+                                    Desenvolva disciplina, visão de longo prazo e inteligência emocional nos
+                                    investimentos.
+                                </p>
+
                             </div>
+
                         </div>
                     </div>
                 </div>
 
-                <!-- CURSO 2 -->
-                <div class="col-lg-6 col-xl-4">
-                    <div class="course-card modern-card">
-                        <div class="course-header">
-                            <div class="course-icon">
-                                <i class='bx bx-money'></i>
-                            </div>
-                            <div class="course-info">
-                                <h3 class="course-title">Renda Fixa e Segura</h3>
-                                <span class="course-lessons">10 Aulas</span>
-                            </div>
-                        </div>
 
-                        <div class="lessons-container">
-                            <!-- AULA 1 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 1</span>
-                                </div>
-                                <h4 class="lesson-title">O que é Renda Fixa?</h4>
-                                <p class="lesson-description">Compreenda o conceito de renda fixa e por que é uma
-                                    opção segura para investidores conservadores.</p>
-                            </div>
 
-                            <!-- AULA 2 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 2</span>
-                                </div>
-                                <h4 class="lesson-title">Tesouro Direto</h4>
-                                <p class="lesson-description">Aprenda como investir no Tesouro Direto, a principal
-                                    opção de renda fixa para brasileiros.</p>
-                            </div>
-
-                            <!-- AULA 3 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 3</span>
-                                </div>
-                                <h4 class="lesson-title">Fundos de Renda Fixa</h4>
-                                <p class="lesson-description">Descubra como funcionam os fundos de renda fixa e suas
-                                    vantagens de diversificação.</p>
-                            </div>
-
-                            <!-- AULA 4 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 4</span>
-                                </div>
-                                <h4 class="lesson-title">CDI e Aplicações Overnight</h4>
-                                <p class="lesson-description">Saiba como funcionam CDI, aplicações overnight e
-                                    fundos que rastreiam esses índices.</p>
-                            </div>
-
-                            <!-- AULA 5 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 5</span>
-                                </div>
-                                <h4 class="lesson-title">Debêntures e Títulos Corporativos</h4>
-                                <p class="lesson-description">Conheça as debêntures e títulos corporativos como opção
-                                    de renda fixa com rentabilidade superior.</p>
-                            </div>
-
-                            <!-- AULA 6 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 6</span>
-                                </div>
-                                <h4 class="lesson-title">Cálculo de Rendimento</h4>
-                                <p class="lesson-description">Aprenda as fórmulas e como calcular o verdadeiro
-                                    rendimento dos seus investimentos em renda fixa.</p>
-                            </div>
-
-                            <!-- AULA 7 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 7</span>
-                                </div>
-                                <h4 class="lesson-title">Tributação em Renda Fixa</h4>
-                                <p class="lesson-description">Entenda como funciona a tributação em diferentes tipos
-                                    de investimentos em renda fixa.</p>
-                            </div>
-
-                            <!-- AULA 8 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 8</span>
-                                </div>
-                                <h4 class="lesson-title">LCI e LCA</h4>
-                                <p class="lesson-description">Descubra as Letras de Crédito do Agronegócio e
-                                    Imobiliário, investimentos com isenção de IR.</p>
-                            </div>
-
-                            <!-- AULA 9 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 9</span>
-                                </div>
-                                <h4 class="lesson-title">Renda Fixa Pós e Prefixada</h4>
-                                <p class="lesson-description">Entenda as diferenças entre investimentos prefixados e
-                                    pós-fixados e qual escolher.</p>
-                            </div>
-
-                            <!-- AULA 10 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 10</span>
-                                </div>
-                                <h4 class="lesson-title">Montando uma Carteira de Renda Fixa</h4>
-                                <p class="lesson-description">Construa uma carteira equilibrada de renda fixa
-                                    adequada ao seu perfil e objetivos.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CURSO 3 -->
-                <div class="col-lg-6 col-xl-4">
-                    <div class="course-card modern-card">
-                        <div class="course-header">
-                            <div class="course-icon">
-                                <i class='bx bx-bar-chart'></i>
-                            </div>
-                            <div class="course-info">
-                                <h3 class="course-title">Ações e Crescimento</h3>
-                                <span class="course-lessons">10 Aulas</span>
-                            </div>
-                        </div>
-
-                        <div class="lessons-container">
-                            <!-- AULA 1 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 1</span>
-                                </div>
-                                <h4 class="lesson-title">O que são Ações?</h4>
-                                <p class="lesson-description">Compreenda o conceito de ações e como você se torna
-                                    sócio de uma empresa ao investir.</p>
-                            </div>
-
-                            <!-- AULA 2 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 2</span>
-                                </div>
-                                <h4 class="lesson-title">Escolhendo a Corretora Certa</h4>
-                                <p class="lesson-description">Conheça as melhores corretoras e como abrir sua conta
-                                    para começar a investir.</p>
-                            </div>
-
-                            <!-- AULA 3 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 3</span>
-                                </div>
-                                <h4 class="lesson-title">Análise Fundamental de Ações</h4>
-                                <p class="lesson-description">Aprenda a analisar demonstrações financeiras e identificar
-                                    boas empresas para investir.</p>
-                            </div>
-
-                            <!-- AULA 4 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 4</span>
-                                </div>
-                                <h4 class="lesson-title">Análise Técnica Prática</h4>
-                                <p class="lesson-description">Domine as principais ferramentas e indicadores de análise
-                                    técnica para timing de entrada.</p>
-                            </div>
-
-                            <!-- AULA 5 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 5</span>
-                                </div>
-                                <h4 class="lesson-title">Dividendos e Yield</h4>
-                                <p class="lesson-description">Entenda como receber dividendos e calcular o rendimento
-                                    esperado de suas ações.</p>
-                            </div>
-
-                            <!-- AULA 6 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 6</span>
-                                </div>
-                                <h4 class="lesson-title">Setores e Estratégias</h4>
-                                <p class="lesson-description">Conheça os diferentes setores da economia e estratégias
-                                    de investimento para cada um.</p>
-                            </div>
-
-                            <!-- AULA 7 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 7</span>
-                                </div>
-                                <h4 class="lesson-title">Value Investing</h4>
-                                <p class="lesson-description">Aprenda a filosofia de Value Investing e como encontrar
-                                    ações subavaliadas.</p>
-                            </div>
-
-                            <!-- AULA 8 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 8</span>
-                                </div>
-                                <h4 class="lesson-title">Stop Loss e Gestão de Risco</h4>
-                                <p class="lesson-description">Aprenda a proteger seus investimentos com stop loss e
-                                    outras técnicas de gestão de risco.</p>
-                            </div>
-
-                            <!-- AULA 9 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 9</span>
-                                </div>
-                                <h4 class="lesson-title">Trading vs Investimento</h4>
-                                <p class="lesson-description">Entenda as diferenças entre trading e investimento de
-                                    longo prazo e qual é melhor para você.</p>
-                            </div>
-
-                            <!-- AULA 10 -->
-                            <div class="lesson-item">
-                                <div class="lesson-header">
-                                    <span class="lesson-number">Aula 10</span>
-                                </div>
-                                <h4 class="lesson-title">Construindo sua Carteira de Ações</h4>
-                                <p class="lesson-description">Monte uma carteira diversificada de ações alinhada ao
-                                    seu perfil e horizonte de investimento.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </section>
 
     </main>
 
-    <!-- Bootstrap JS -->
+    <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Effects -->
+
+    <!-- Custom Effects & Scripts -->
     <script src="../js/effects.js"></script>
-    <!-- Script da página -->
     <script src="./homeLearn.js"></script>
 
+    <!-- Intersection Observer & Interactive Glows -->
+    <script>
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.05 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Interactive mouse glow tracker
+        const glow = document.getElementById('mouse-glow');
+        if (glow) {
+            document.addEventListener('mousemove', (e) => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
+        }
+    </script>
 </body>
 
 </html>

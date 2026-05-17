@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - NexusPay </title>
+    <title>NexusPay - Login</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="../style.css">
@@ -20,47 +20,37 @@
 
 <body>
 
-    <!-- Background -->
-    <div class="space-background"></div>
+    <!-- Ambient background animations -->
+    <div class="interactive-glow" id="mouse-glow"></div>
+    <div class="glow-sphere c1"></div>
+    <div class="glow-sphere c2"></div>
 
-    <!-- Cometas (efeito leve) -->
-    <div class="comets-container">
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-    </div>
-
-    <!-- Container principal -->
     <div class="login-page-container">
 
-        <!-- Logo -->
-        <div class="nebula-logo-container">
+        <!-- Logo with iconic hive -->
+        <header class="nebula-logo-container">
+            <h1 class="logo-text"><i class='bx bx-hive'></i> NexusPay</h1>
+        </header>
 
-            <h1 class="logo-text">NexusPay</h1>
-        </div>
-
-        <!-- Painel -->
+        <!-- Main Panel -->
         <main class="login-panel">
+            <div class="login-header">
+                <h2>BEM-VINDO DE VOLTA</h2>
+                <p>Insira suas credenciais para gerenciar seu patrimônio.</p>
+            </div>
 
-            <!-- Header -->
-            <header class="login-header">
-                <h2>BEM-VINDO AO SEU UNIVERSO FINANCEIRO</h2>
-                <p>crie sua conta para gerenciar seu patrimônio.</p>
-            </header>
-
-            <!-- Formulário -->
-            <div class="login-form">
-
+            <!-- Formulário sem reload -->
+            <form class="login-form" onsubmit="event.preventDefault(); confirmLogin();">
                 <!-- Email -->
                 <div class="input-group">
-                    <label for="email"><i class='bx bx-envelope'></i></label>
-                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <label for="email" aria-label="E-mail"><i class='bx bx-envelope'></i></label>
+                    <input type="email" id="email" placeholder="E-mail" required autocomplete="email">
                 </div>
 
                 <!-- Senha -->
                 <div class="input-group">
-                    <label for="password"><i class='bx bx-lock-alt'></i></label>
-                    <input type="password" id="senha" name="password" placeholder="Senha" required>
+                    <label for="senha" aria-label="Senha"><i class='bx bx-lock-alt'></i></label>
+                    <input type="password" id="senha" placeholder="Senha" required autocomplete="current-password">
                 </div>
 
                 <!-- Botão -->
@@ -70,11 +60,11 @@
                 </button>
 
                 <button style="display: none;" type="submit" id="btnEnter" class="btn-primary btn-login">
-                    <a style="text-decoration: none; color: white;" href="./home.html">Entrar</a>
+                    <a style="text-decoration: none; color: rgb(0, 0, 0);" href="./home.html">Entrar</a>
                 </button>
 
 
-                <a style="color: white; text-decoration: none; " href="../index.html">Não tem conta?</a>
+                <a style="color: rgb(255, 255, 255); text-decoration: none; " href="../index.html">Não tem conta?</a>
 
             </div>
 
@@ -83,7 +73,19 @@
         </main>
 
     </div>
+
+    <!-- Scripts -->
     <script src="../js/Login.js"></script>
+    <script>
+        // Interactive Mouse Glow Tracker
+        const glow = document.getElementById('mouse-glow');
+        if (glow) {
+            document.addEventListener('mousemove', (e) => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
+        }
+    </script>
 </body>
 
 </html>

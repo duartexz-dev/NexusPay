@@ -12,9 +12,9 @@ function criar() {
         alert("Vamos,te direcionar para o login principal!")
         window.open("./html/login.html")
 
-        localStorage.setItem("email", JSON.stringify(email));
-        localStorage.setItem("senha", JSON.stringify(senha));
-
+    localStorage.setItem("email", JSON.stringify(email));
+    localStorage.setItem("senha", JSON.stringify(senha));
+    
     }
 
 

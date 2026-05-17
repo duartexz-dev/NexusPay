@@ -1,75 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - NEBULA Financial</title>
+    <title>NexusPay - Criar Conta</title>
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <div class="space-background"></div>
+    <!-- Ambient background animations -->
+    <div class="interactive-glow" id="mouse-glow"></div>
+    <div class="glow-sphere c1"></div>
+    <div class="glow-sphere c2"></div>
 
     <div class="login-page-container">
 
-        <div class="nebula-logo-container">
+        <!-- Logo with iconic hive -->
+        <header class="nebula-logo-container">
+            <h1 class="logo-text"><i class='bx bx-hive'></i> NexusPay</h1>
+        </header>
 
-            <h1 class="logo-text">NexusPay</h1>
-        </div>
-
+        <!-- Main Panel -->
         <main class="login-panel">
-            <header class="login-header">
-                <h2>BEM-VINDO AO SEU UNIVERSO FINANCEIRO</h2>
-                <p>Faça login para gerenciar seu patrimônio e futuro.</p>
-            </header>
+            <div class="login-header">
+                <h2>CRIE SUA CONTA FINANCEIRA</h2>
+                <p>Abra seu portal para a gestão de ativos do amanhã.</p>
+            </div>
 
-            <div class="login-form">
+            <!-- Formulário sem submit default para controle por JS -->
+            <form class="login-form" onsubmit="event.preventDefault(); criar();">
+                <!-- Email -->
                 <div class="input-group">
-                    <label for="email"><i class='bx bx-envelope'></i></label>
-                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <label for="email" aria-label="E-mail"><i class='bx bx-envelope'></i></label>
+                    <input type="email" id="email" name="email" placeholder="E-mail (@gmail.com)" required autocomplete="email">
                 </div>
 
+                <!-- Senha -->
                 <div class="input-group">
-                    <label for="password"><i class='bx bx-lock-alt'></i></label>
-                    <input type="password" id="senha" name="password" placeholder="Senha" required>
+                    <label for="senha" aria-label="Senha"><i class='bx bx-lock-alt'></i></label>
+                    <input type="password" id="senha" name="password" placeholder="Senha" required autocomplete="new-password">
                 </div>
 
+                <!-- Botão de Cadastro -->
+                <button type="submit" class="btn-primary btn-login">
+                    Começar Agora
+                </button>
 
-
-                <button type="submit" class="btn-primary btn-login" onclick="criar()">Cadastrar</button>
-
-                <a style="color: white; text-decoration: none; " href="./html/login.html">Já tem conta?</a>
-
-                </di>
-
-
+                <!-- Link de redirecionamento -->
+                <a class="nav-redirect-link" href="./html/login.html">Já possui uma conta? Entrar</a>
+            </form>
         </main>
 
     </div>
-    <div class="space-background"></div>
 
-    <div class="comets-container">
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-        <div class="comet"></div>
-    </div>
-
+    <!-- Scripts -->
     <script src="./js/Cadastro.js"></script>
+    <script>
+        // Interactive Mouse Glow Tracker
+        const glow = document.getElementById('mouse-glow');
+        if (glow) {
+            document.addEventListener('mousemove', (e) => {
+                glow.style.left = e.clientX + 'px';
+                glow.style.top = e.clientY + 'px';
+            });
+        }
+    </script>
 </body>
 
 </html>
