@@ -28,7 +28,7 @@ function rendaFixa() {
     // ELEMENTOS
     const cdi = document.getElementById("cdiValor");
     if (!cdi) return;
-    
+
     const cdiValor = Number(cdi.innerText) || 0;
 
     // APLICA O RENDIMENTO (0.1%)
@@ -50,7 +50,7 @@ function rendaFixa() {
     );
 
     showToast(`Rendimento CDI aplicado: +R$ ${rendimento.toFixed(2)}`, "success");
-    
+
     // Recalcula o patrimônio geral
     recalcularPatrimonio();
 }
@@ -77,7 +77,7 @@ function rendimentoBtc() {
     // ELEMENTOS
     const btc = document.getElementById("btcValor");
     if (!btc) return;
-    
+
     const btcValor = Number(btc.innerText) || 0;
 
     // RENDIMENTO BTC (0.2%)
@@ -99,7 +99,7 @@ function rendimentoBtc() {
     );
 
     showToast(`Bitcoin atualizado: +R$ ${rendimento.toFixed(2)}`, "success");
-    
+
     // Recalcula o patrimônio geral
     recalcularPatrimonio();
 }
@@ -126,7 +126,7 @@ function rendimentoAcoes() {
     // ELEMENTOS
     const acoes = document.getElementById("acoesValor");
     if (!acoes) return;
-    
+
     const acoesValor = Number(acoes.innerText) || 0;
 
     // RENDIMENTO AÇÕES (0.5%)
@@ -148,7 +148,7 @@ function rendimentoAcoes() {
     );
 
     showToast(`Ações atualizadas: +R$ ${rendimento.toFixed(2)}`, "success");
-    
+
     // Recalcula o patrimônio geral
     recalcularPatrimonio();
 }
@@ -162,7 +162,7 @@ function atAtivos() {
     const acoesVal = Number(localStorage.getItem("acoesSaldo")) || 0;
 
     if (btcVal === 0 && cdiVal === 0 && acoesVal === 0) {
-        showToast("Você não possui ativos investidos para render!", "error");
+        alert("Você não possui ativos investidos para render!", "error");
         return;
     }
 
@@ -173,6 +173,7 @@ function atAtivos() {
     // CDI
     if (cdiVal > 0 && localStorage.getItem("ultimoRendimentoCDI") !== hoje) {
         rendaFixa();
+
         rendeuAlgum = true;
     }
     // BTC
@@ -188,6 +189,7 @@ function atAtivos() {
     }
 
     if (!rendeuAlgum) {
-        showToast("Todos os seus ativos já renderam por hoje. Volte amanhã!", "info");
+        alert("Todos os seus ativos já renderam por hoje. Volte amanhã!", "info");
     }
 }
+

@@ -167,7 +167,7 @@ function trasferir() {
         btc.innerText = Number(valor) + Number(btcValor);
 
         saldo.innerText = Number(saldoV) - Number(valor);
-        
+
         let saldoNovo = Number(saldoV) - Number(valor);
 
         localStorage.setItem("saldo", saldoNovo)
@@ -185,7 +185,7 @@ function trasferir() {
         cdi.innerText = Number(valor) + Number(cdiValor);
 
         saldo.innerText = Number(saldoV) - Number(valor);
-        
+
         let saldoNovo = Number(saldoV) - Number(valor);
 
         localStorage.setItem("saldo", saldoNovo)
@@ -208,7 +208,7 @@ function trasferir() {
         acoes.innerText = Number(valor) + Number(acoesValor);
 
         saldo.innerText = Number(saldoV) - Number(valor);
-        
+
         let saldoNovo = Number(saldoV) - Number(valor);
 
         localStorage.setItem("saldo", saldoNovo)
@@ -264,7 +264,7 @@ if (!email) {
 
 
 let patriText = document.getElementById("patrimonio")
-patriText.innerHTML = Number(btcInicial) + Number(acoesInicial) + Number(cdiInicial)
+patriText.innerHTML = (Number(btcInicial) + Number(acoesInicial) + Number(cdiInicial)).toFixed(2)
 
 
 
