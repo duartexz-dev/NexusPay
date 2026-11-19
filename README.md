@@ -1,103 +1,82 @@
-# NexusPay 📈
+# NexusPay
 
-NexusPay é uma plataforma web de simulação de investimentos criada para estudar desenvolvimento front-end, lógica financeira e JavaScript.
+> Projeto educacional de simulação financeira com HTML, CSS e JavaScript. Não é um banco, uma corretora ou uma plataforma de investimentos real.
 
-O projeto simula aplicações financeiras como Bitcoin e renda fixa, permitindo acompanhar saldo, histórico e crescimento dos investimentos em uma interface moderna e interativa.
+O NexusPay é uma interface web para praticar desenvolvimento front-end e lógica de programação usando um cenário de carteira financeira fictícia. O usuário pode explorar saldo, alocação de ativos, movimentações e informações de perfil em uma experiência demonstrativa.
 
----
+## O que existe no projeto
 
-## ✨ Funcionalidades
+- Painel com saldo fictício e áreas de alocação para criptomoedas, renda fixa e ações.
+- Simulação de transferências entre o saldo disponível e categorias de ativos.
+- Histórico de movimentações exibido na interface.
+- Personalização local do nome do perfil.
+- Atualização demonstrativa de valores usando dados armazenados no navegador.
+- Uma área separada de conteúdo educacional em `Learn-Module/`.
 
-- 💰 Sistema de saldo dinâmico
-- 📈 Simulação de renda fixa
-- ₿ Simulação de investimentos em Bitcoin
-- 📜 Histórico de movimentações
-- 🧠 Cálculo de juros compostos
-- 📅 Controle baseado em data
-- 💾 Armazenamento com LocalStorage
-- 🎨 Interface moderna e responsiva
-- ⚡ Efeitos visuais e animações
+Os valores e rendimentos exibidos fazem parte de uma simulação. O arquivo `js/rendasAtivosAI.js` aplica percentuais fixos ao saldo local — por exemplo, 0,1% para renda fixa, 0,2% para Bitcoin e 0,5% para ações. Esses números não representam cotações, taxas oficiais ou resultados reais de mercado. Apesar do nome do arquivo, essa lógica não utiliza um modelo de inteligência artificial.
 
----
-
-## 🚀 Tecnologias Utilizadas
+## Tecnologias
 
 - HTML5
 - CSS3
 - JavaScript
-- Bootstrap
-- Boxicons
+- Bootstrap e Boxicons
+- `localStorage` para persistência local dos dados demonstrativos
 
----
+## Executar localmente
 
-## 📂 Estrutura do Projeto
+O projeto não possui um comando próprio de instalação na raiz. Para servir os arquivos estáticos, use um servidor HTTP local:
 
 ```bash
+git clone https://github.com/duartexz-dev/NexusPay.git
+cd NexusPay
+python -m http.server 8000
+```
+
+Abra `http://localhost:8000` no navegador. Também é possível usar a extensão Live Server do VS Code.
+
+## Estrutura atual
+
+```text
 NexusPay/
-│
+├── Learn-Module/
+│   ├── homeLearn.html
+│   ├── homeLearn.css
+│   └── homeLearn.js
+├── backend/
+│   └── .gitignore
 ├── html/
 │   ├── home.html
-│   ├── login.html
 │   └── home.css
-│
 ├── js/
 │   ├── Cadastro.js
-│   ├── effects.js
 │   ├── Home.js
-│   ├── Login.js
+│   ├── api.js
+│   ├── effects.js
 │   └── rendasAtivosAI.js
-│
 ├── index.html
 ├── script.js
 └── style.css
 ```
 
----
+### Observações sobre a integração de API
 
-## 🎯 Objetivo do Projeto
+O arquivo `js/api.js` exporta um handler que consulta a CoinGecko e espera a variável de ambiente `COINGECKO_API_KEY`. Ele requer um ambiente de execução capaz de hospedar esse tipo de handler; servir o repositório como arquivos estáticos não cria automaticamente uma rota de API. A documentação não pressupõe que essa integração esteja implantada ou conectada ao painel.
 
-O NexusPay foi criado para desenvolver habilidades em:
+A pasta `backend/` contém atualmente apenas um arquivo `.gitignore`; ela não representa um backend funcional.
 
-- Desenvolvimento Front-End
-- Manipulação do DOM
-- Lógica de programação
-- Simulações financeiras
-- Juros compostos
-- Armazenamento local
-- UI/UX moderno
+## Limitações importantes
 
----
+- Os dados de saldo, ativos e histórico são demonstrativos e ficam no armazenamento local do navegador.
+- Não existe autenticação real de usuários nem banco de dados.
+- Não são realizadas compras, vendas, transferências bancárias ou operações financeiras.
+- Os rendimentos simulados não acompanham o mercado e não devem ser usados para decisões financeiras.
+- A existência de um handler para CoinGecko não significa que a aplicação esteja conectada a uma API em produção.
 
-## 📱 Responsividade
+## Objetivo de aprendizagem
 
-O site foi desenvolvido para funcionar em:
-
-- 💻 Desktop
-- 📱 Smartphones
-- 📟 Tablets
+O projeto serve como exercício de construção de interfaces, manipulação do DOM, eventos, armazenamento local, organização de arquivos e implementação de regras de negócio simuladas.
 
 ---
 
-## 🔮 Futuras Melhorias
-
-- Integração com API real de criptomoedas
-- Sistema de autenticação
-- Banco de dados
-- Dashboard com gráficos
-- Sistema de rendimento automático diário
-- Perfil do usuário
-- Modo escuro
-
----
-
-## 🌐 Projeto Online
-
-🔗 https://duartexz-dev.github.io/NexusPay/
-
----
-
-## 👨‍💻 Desenvolvido por
-
-Arthur Duarte
-
-Projeto desenvolvido para estudos, prática de programação e aprendizado sobre investimentos.
+Desenvolvido por Arthur Duarte para fins de estudo.
